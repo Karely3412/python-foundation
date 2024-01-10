@@ -33,6 +33,9 @@ age3 = 29
 
 dash = '-'
 
+# or you can do it like so instead of using a variable because the header names are only being used as is.
+print(f"{'Name':<8}{'City':<11}{'State':<13}{'Age':>4}")
+
 print(f'{name:<8}{city:<11}{state:<13}{age:>4}')
 print(f'{dash*7} {dash*10} {dash*13} {dash*4}')
 print(f'{name1:<8}{city1:<10}{state1:<13}{age1:>4}')
