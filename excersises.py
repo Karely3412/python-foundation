@@ -191,7 +191,17 @@ num_new = num_int + num_flo
 
 
 
-
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+def input_answers():
+    print('What ethinicity is your dad? ')
+    answer_1 = input()
+
+    print('What ethinicity is your mom? ')
+    answer_2 = input()
     
+
+    return f'You are {answer_1} & {answer_2}!'
+
+
+print(input_answers())
