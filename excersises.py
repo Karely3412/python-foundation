@@ -83,14 +83,15 @@ dash = '-'
 # print(people_info(persons_list))
 
 
+"""
+ Needed results:
 
-# Needed results:
-
-# Name   City       State         Age
-# ------ ---------- ------------- ----
-# Jane   Boston     Massachusetts  24
-# Fred   Portland   Oregon         31
-# Betsy  Orlando    Florida        29
+ Name   City       State         Age
+ ------ ---------- ------------- ----
+ Jane   Boston     Massachusetts  24
+ Fred   Portland   Oregon         31
+ Betsy  Orlando    Florida        29
+"""
 
 
 
@@ -100,30 +101,20 @@ dash = '-'
 """
 When adding inputs make you are casting data types. Make sure you're adding strings to strings or integers to integers.
 
-
 """
 
+# def input_answers():
+#     print('What ethinicity is your dad? ')
+#     answer_1 = input()
 
-
-# def input_func():
-#     question_1 = input (" ")
+#     print('What ethinicity is your mom? ')
+#     answer_2 = input()
     
 
+#     return f'You are {answer_1} & {answer_2}!'
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+# print(input_answers())
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -131,7 +122,6 @@ When adding inputs make you are casting data types. Make sure you're adding stri
 """
 Notes:
 Go back to video to see the examples again. 
-
 
 """
     
@@ -184,27 +174,6 @@ num_new = num_int + num_flo
 # d = 99.1
 # print(float(r) + float(d))
 # 103.445
-
-# def data_type_conversion(data):
-#     if data:
-
-
-
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# def input_answers():
-#     print('What ethinicity is your dad? ')
-#     answer_1 = input()
-
-#     print('What ethinicity is your mom? ')
-#     answer_2 = input()
-    
-
-#     return f'You are {answer_1} & {answer_2}!'
-
-
-# print(input_answers())
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -279,12 +248,21 @@ Subtraction
 # 0.30000000000000004
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    
+# Boolean excercises
+"""
+
+** Boolean Order of Operations **
+Parentheses (  )
+NOT
+AND
+OR
+left-to-right
 
 """
-1. True
-2. True 
-3. True
-4. False
-5. True
-6. False
-"""
+# 1. True -> True AND False OR True
+# 2. True -> False OR True AND NOT False
+# 3. True -> True OR (False OR True) AND False
+# 4. False -> NOT(True OR False) AND NOT(True XOR True)
+# 5. True -> True OR False AND True OR False
+# 6. False -> True AND (False AND (True OR False))
+
