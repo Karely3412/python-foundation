@@ -235,7 +235,30 @@ num_new = num_int + num_flo
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+"""
+Mathematics 
 
+| Operation      | Operator | Example |
+| -------------- | -------- | ------- |
+| Addition       |    +     |  x + y  | <- basic adding 
+| Subtraction    |    -     |  x - y  | <- basic subtracting 
+| Multiplication |    *     |  x * y  | <- basic mutiplication 
+| Division       |    /     |  x / y  | <- basic division with a remainder
+| Modulus        |    %     |  x % y  | <- how many time can a number go evenly into an other
+| Exponent       |    **    |  x ** y | <-  
+| Floor Division |    //    |  x // y | <- this will give you back a whole number
+| -------------- | -------- | ------- | 
+
+** Order of Operations **
+
+Parentheses
+Exponents
+Multiplication
+Division
+Addition
+Subtraction
+
+"""
 
 
 # num1 = 369532456
