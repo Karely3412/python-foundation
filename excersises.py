@@ -266,3 +266,38 @@ left-to-right
 # 5. True -> True OR False AND True OR False
 # 6. False -> True AND (False AND (True OR False))
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    
+# Examples
+"""
+new_number = 150
+
+if new_number > 100:
+    print(new_number, "too big")
+
+- - - - - - - - - - - - - - - -
+password = 'abc123'
+
+if password == "abc123"
+    print("Welcome")
+else:
+    print("Access Denied")
+
+- - - - - - - - - - - - - - - -
+if role == "standard":
+    print("User Dasboard")
+elif role == "admin":
+    print("Admin Panel")
+else:
+    print("Not Authorized")
+
+- - - - - - - - - - - - - - - -
+user_name = "John"
+email = "john_wick@gmail.com"
+password = "I'mBack"
+
+if (user_name == "John" or email == "john_wick@gmail.com") and password == "I'mBack":
+    print("Welcome duder!")
+else:
+    print("No business on Continental grounds!")
+
+"""
