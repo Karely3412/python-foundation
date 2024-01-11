@@ -193,15 +193,73 @@ num_new = num_int + num_flo
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-def input_answers():
-    print('What ethinicity is your dad? ')
-    answer_1 = input()
+# def input_answers():
+#     print('What ethinicity is your dad? ')
+#     answer_1 = input()
 
-    print('What ethinicity is your mom? ')
-    answer_2 = input()
+#     print('What ethinicity is your mom? ')
+#     answer_2 = input()
     
 
-    return f'You are {answer_1} & {answer_2}!'
+#     return f'You are {answer_1} & {answer_2}!'
 
 
-print(input_answers())
+# print(input_answers())
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# number = 8
+# point_num = 8.8
+# my_string = "888"
+# the_bool = True
+
+# def type_casting(input):
+#     if type(input) == int:
+#         return str(input)
+#     if type(input) == str:
+#         return int(input)
+#     if type(input) == float:
+#         return bool(input)
+#     if type(input) == bool:
+#         return 0
+    
+
+# print(type_casting(9))
+# print(type_casting('989890'))
+# print(type_casting(989.1))
+# print(type_casting(True))
+
+# print(type(int))
+
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+# num1 = 369532456
+# num2 = 32
+
+
+# print(num1 / num2)
+
+
+
+# print(6.6 * 6.6)
+# 43.559999999999995
+# print(6.6 * 6.6 * 6.6)
+# 287.496
+# print(0.1 + 0.2)
+# 0.30000000000000004
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    
+
+"""
+True
+True 
+True
+False
+True
+False
+"""
