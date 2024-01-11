@@ -258,8 +258,10 @@ Division
 Addition
 Subtraction
 
-"""
+** scientific notation: Look this up **
 
+"""
+# 6.1 Integer Arithmetic exercises
 
 # num1 = 369532456
 # num2 = 32
@@ -267,7 +269,7 @@ Subtraction
 
 # print(num1 / num2)
 
-
+# 6.2 Floating Point Arithmetic exercises
 
 # print(6.6 * 6.6)
 # 43.559999999999995
