@@ -318,6 +318,28 @@ else:
 #     print("You've failed.")
 
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+for i in range(1,101):
+    print(i)
+
+
+name = ""
+for char in "Karely":
+    print(char)
+    name += char
+
+print (name)
+
+name = []
+for char in "Karely":
+    print(char)
+    name += char
+
+print (name)
+
+
 
 
 
