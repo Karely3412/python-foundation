@@ -321,25 +321,46 @@ else:
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-for i in range(1,101):
-    print(i)
+
+# for i in range(1,101):
+#     print(i)
+
+# for i in range(1,101,2):
+#     print(i)
+
+# for i in range(101,1,-1):
+#     print(i)
 
 
-name = ""
-for char in "Karely":
-    print(char)
-    name += char
+# name = ""
+# for char in "Karely":
+#     print(char)
+#     name += char
 
-print (name)
+# print (name)
 
-name = []
-for char in "Karely":
-    print(char)
-    name += char
+# name = []
+# for char in "Karely":
+#     print(char)
+#     name += char
 
-print (name)
+# print (name)
 
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+# x = 1
+# while x < 6:
+#     print(x)
+#   x += 1
+
+
+# nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for i in range(1, 11):
+    if i >= 2 and i <= 7:
+        print(i)
 
 
 
