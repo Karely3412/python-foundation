@@ -22,28 +22,16 @@ def high_low():
     player_2 = input('..Can you guess what it is? ')
 
     while True:
-        next_guess = input('Guess again! ')
 
-        if player_2 < player_1 and next_guess < player_1:
-            print(f'Too low! Try again!{next_guess}\n')
-        elif  player_2 > player_1 and next_guess > player_1: 
-            print(f'Too high! Try again!{next_guess}\n')
+        if int(player_2) < int(player_1) :
+            print('Too low! Try again! ')
+        elif  int(player_2) > int(player_1) : 
+            print("Too high! Try again! ")
         else:
             print('You nailed it!')
             break
 
+        player_2 = input('Guess again!(: ')
 
 high_low()
     
-
-"""
-
-
-
-
-
-
-
-
-
-"""
