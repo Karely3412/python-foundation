@@ -17,21 +17,21 @@ That's correct!!!!
 
 
 def high_low():
-    player_1 = input('Player 1 enter a number: \n')
+    player_1 = int(input('Player 1 enter a number: \n'))
     print('I\'m thinking of a number between 1 and 100..\n')
-    player_2 = input('..Can you guess what it is? ')
+    player_2 = int(input('..Can you guess what it is? '))
 
     while True:
 
-        if int(player_2) < int(player_1) :
+        if player_2 < player_1 :
             print('Too low! Try again! ')
-        elif  int(player_2) > int(player_1) : 
+        elif  player_2 > player_1 : 
             print("Too high! Try again! ")
         else:
             print('You nailed it!')
             break
 
-        player_2 = input('Guess again!(: ')
+        player_2 = int(input('Guess again!(: '))
 
 high_low()
     

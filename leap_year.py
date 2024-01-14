@@ -19,3 +19,11 @@ AND
 3) Unless it is also divisible by 400
 
 """
+
+
+def leap_year(input):
+    if input < 1752:
+        print('Please enter a year after 1752 AD.')
+
+
+leap_year(1751)
