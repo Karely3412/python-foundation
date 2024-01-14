@@ -22,8 +22,13 @@ AND
 
 
 def leap_year(input):
-    if input < 1752:
-        print('Please enter a year after 1752 AD.')
+
+    while True:
+
+        if input < 1752:
+            print('Please enter a year after 1752 AD.')
+        elif input > 1752 and input % 4 == 0:
+            print('is divisible by 4')
 
 
 leap_year(1751)
