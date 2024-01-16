@@ -21,14 +21,27 @@ AND
 """
 
 
-def leap_year(input):
+def leap_year():
 
     while True:
+        year_question = int(input('Please enter a year after 1752 AD: '))
 
-        if input < 1752:
-            print('Please enter a year after 1752 AD.')
-        elif input > 1752 and input % 4 == 0:
-            print('is divisible by 4')
+        if year_question < 1752:
+            print('Year is before 1752. Try again..')
+            continue
+
+        if (year_question >= 1752) and year_question % 400 == 0:
+            print(f'{year_question} is leap year.. True 1')
+            break
+        elif (year_question >= 1752) and year_question % 100 == 0:
+            print('Not a leap year. Try again.. False 1')
+        elif (year_question >= 1752) and year_question % 4 == 0:
+            print(f'{year_question} is leap year.. True 2')
+            break
+        else:
+            print('Not a leap year. Try again.. False 2')
+
+                
 
 
-leap_year(1751)
+leap_year()
