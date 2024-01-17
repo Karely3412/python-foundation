@@ -1,5 +1,27 @@
 import random
 
+
+def magic_8_ball():
+    list_answers = ["It is certain", "Outlook good", "You may rely on it", "Ask again later", "Concentrate and ask again", "Reply hazy, try again", "My reply is no", "My sources say no"]
+    
+    while True:
+        user_prompt = input("Ask a question: ")
+
+        if user_prompt == '':
+            print ("Program ended! Come back again soon!")
+            break
+        
+        else: 
+            print(random.choice(list_answers))
+            
+            
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    
+magic_8_ball()
+
 # def magic_8_ball():
 #     user_prompt = input("Ask a question: ")
 #     rand = random.randrange(1,9)
@@ -107,28 +129,6 @@ import random
 
 # magic_8_ball()
 
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-
-def magic_8_ball():
-
-    list_answers = ["It is certain", "Outlook good", "You may rely on it", "Ask again later", "Concentrate and ask again", "Reply hazy, try again", "My reply is no", "My sources say no"]
-    
-    while True:
-        user_prompt = input("Ask a question: ")
-
-        if user_prompt == '':
-            print ("Program ended! Come back again soon!")
-            break
-        
-        else: 
-            print(random.choice(list_answers))
-            
-            
-        
-    
-magic_8_ball()
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
