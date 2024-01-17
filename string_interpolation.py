@@ -1,15 +1,17 @@
 # Homework
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 price_item = {
-    "Purse": 189.00,
+    "Purse": 89.00,
     "Watch": 979.00,
     "Tie": 9.00
 }
 
 def price_formatter(price_obj):
+
     formatted_prices = ''
     for item in price_obj:
-        formatted_price = f'{item} {price_obj[item]:>8}\n'
+        formatted_value = f'{price_obj[item]:.2f}\n'
+        formatted_price = f'{item:<13}$ {formatted_value:>8}\n'
         formatted_prices += formatted_price
             
 

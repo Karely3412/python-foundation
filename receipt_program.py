@@ -25,15 +25,15 @@ print(customer_receipt())
 
 
 
-meals_ordered = True
+# meals_ordered = True
 
-sub_total = 250.87
+# sub_total = 250.87
 
-tip = sub_total * 0.10
+# tip = sub_total * 0.10
 
-total = sub_total + tip
+# total = sub_total + tip
 
-receipt = "Your total is " + "$" + str(total)
+# receipt = "Your total is " + "$" + str(total)
 
-print(receipt)
+# print(receipt)
 
