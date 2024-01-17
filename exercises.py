@@ -364,5 +364,38 @@ else:
 
 
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# for x in [1,2,3]:
+#     for y in ['a', 'b', 'c']:
+#         print(y)
+#     print(x)
+
+
+# for x in [1,2,3]:
+#     for y in ['a', 'b', 'c']:
+#         print(y)
+#         break
+#     print(x)
+
+# for x in range(1,5):
+#     print(f'Loop#{x} starts here')
+#     for y in range(10,20):
+#         if y == 15:
+#             print(y*2)
+#             break
+#         print(y)
+#     print(f'Loop#{x} end here')
+
+
+for x in range(1,5):
+    print(f'Loop# {x} starts here')
+    for y in range(10,20):
+        if y == 15:
+            print('skip me')
+            continue
+        print(y)
+    print(f'Loop# {x} end here')
+    
 
 

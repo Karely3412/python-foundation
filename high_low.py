@@ -18,8 +18,12 @@ That's correct!!!!
 
 def high_low():
     player_1 = int(input('Player 1 enter a number: \n'))
+    if player_1 >= 101:
+         print("Oops! Choose a number between 1-100")
+         
     print('I\'m thinking of a number between 1 and 100..\n')
     player_2 = int(input('..Can you guess what it is? '))
+
 
     while True:
 
