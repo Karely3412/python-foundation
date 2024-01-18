@@ -46,22 +46,21 @@ list_sec = []
 #         print(i)
 
 # 4. Separate odds and evens. Write code that will take a list of positive integers and will create a new list with all of the odds at the beginning of the list and all of the evens at the end of the list. For example:
-a_list = [1,5,8,2,4,8,1,3,5,9]
-
-b_list = []
-c_list = []
+a_list = [1,5,8,2,4,8,1,3,5,9,4,8,1,3,5,4,8,1,3,5,1,5,8,2,4]
 
 
-for i in a_list:
-    if i % 2 != 0:
-        b_list.append(i)
-    
-for i in a_list:
-    if i % 2 == 0:
-        c_list.append(i)
+def rearranged_list(list):
+    b_list = []
 
-b_list.extend(c_list)
-# b_list += c_list
+    for i in list:
+        if i % 2 != 0:
+            b_list.append(i)
 
-print(b_list)
-# print(c_list)
+    for i in list:
+        if i % 2 == 0:
+            b_list.append(i)
+
+
+    print(b_list)
+
+rearranged_list(a_list)
