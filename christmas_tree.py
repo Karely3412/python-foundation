@@ -5,7 +5,8 @@ def christmas_tree():
     asterisk = '*'
     first_input = int(input('How many layers tall would you like your tree? '))
     sec_input = input('Virtual elves need a character or symbol to start constructing your tree! ')
-    tree_base = f'{asterisk*3:^{{first_input}*2}}\n{asterisk*3:^{first_input*2}}'
+    tree_base = f'{asterisk*3:^{first_input*2}}\n{asterisk*3:^{first_input*2}}'
+    
 
     while len(sec_input) > 1:
         sec_input = input('Please only enter one character.')

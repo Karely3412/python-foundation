@@ -16,11 +16,11 @@ def magic_8_ball():
             
             
 
+magic_8_ball()
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-    
-magic_8_ball()
 
 # def magic_8_ball():
 #     user_prompt = input("Ask a question: ")
