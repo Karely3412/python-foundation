@@ -29,6 +29,8 @@ my_list = [8,7,6,5,4,3,2,1]
 # 1.
 list_one = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 # 2.
 list_sec = []
@@ -38,12 +40,16 @@ list_sec = []
 
 # print(list_sec)
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # 3. 
 # my_list = ["a", "b", "c", "d", "b", "a", "e"]
 
 # for i in my_list:
 #     if i == 'a' or i == 'e':
 #         print(i)
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # 4. Separate odds and evens. Write code that will take a list of positive integers and will create a new list with all of the odds at the beginning of the list and all of the evens at the end of the list. For example:
 # a_list = [1,5,8,2,4,8,1,3,5,9,4,8,1,3,5,4,8,1,3,5,1,5,8,2,4]
@@ -65,25 +71,34 @@ list_sec = []
 
 # rearranged_list(a_list)
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # 5.
+
+def man_rever():    
+    my_list = [1, 2, 3, 4, 5, 6, 7, 8]
+
+    new_list = []
+
+    for i in my_list:
+        new_list.insert(0, i)
+
+    print(new_list)   
+
+print(man_rever())   
+  
+# - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Hayden's thoughts(: !
+
 # my_list = [1, 2, 3, 4, 5, 6, 7, 8]
 
-# new_list = []
+# for i in range(len(my_list) // 2):
+#     first = i
+#     second = len(my_list) - 1 -i
+#     # second = - 1 -i
+#     # temp = my_list[first]
+#     # my_list[first] = my_list[second]
+#     # my_list[second] = temp
+#     my_list[first], my_list[second] = my_list[second], my_list[first]
 
-# for i in my_list:
-#     new_list.insert(0, i)
-
-# print(new_list)      
-  
-my_list = [1, 2, 3, 4, 5, 6, 7, 8]
-
-for i in range(len(my_list) // 2):
-    first = i
-    second = len(my_list) - 1 -i
-    # second = - 1 -i
-    # temp = my_list[first]
-    # my_list[first] = my_list[second]
-    # my_list[second] = temp
-    my_list[first], my_list[second] = my_list[second], my_list[first]
-
-print(my_list)
+# print(my_list)
