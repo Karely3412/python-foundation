@@ -15,15 +15,14 @@
 
 
 def month_of_sept():
-    print('     September 2021\n')
-    print('  S  M  T  W  T  F  S\n')
-    print('         ', end='')
+    print(' '*8, 'September 2021\n')
+    print('   S   M   T   W   T   F   S\n')
+    print(' '*12, end='')
 
     for i in range(1,31):
-        # print(i, end='')
         if i == 5 or i == 12 or i == 19 or i == 26:
             print("\n")
-        print(f'{i:>3}', end="")
+        print(f'{i:>4}', end="")
 
     print()
 
