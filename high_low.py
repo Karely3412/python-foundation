@@ -21,9 +21,8 @@ def high_low():
 
     while player_1 >= 101:
         player_1 = int(input("Oops! Choose a number between 1-100:\n "))
-        
-        if player_1 <= 100:
-            print('I\'m thinking of a number between 1 and 100..\n')
+
+    print('I\'m thinking of a number between 1 and 100..\n')
 
 
     player_2 = int(input('..Can you guess what it is? '))     # <- integer
