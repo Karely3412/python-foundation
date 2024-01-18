@@ -388,14 +388,46 @@ else:
 #     print(f'Loop#{x} end here')
 
 
-for x in range(1,5):
-    print(f'Loop# {x} starts here')
-    for y in range(10,20):
-        if y == 15:
-            print('skip me')
-            continue
-        print(y)
-    print(f'Loop# {x} end here')
+# for x in range(1,5):
+#     print(f'Loop# {x} starts here')
+#     for y in range(10,20):
+#         if y == 15:
+#             print('skip me')
+#             continue
+#         print(y)
+#     print(f'Loop# {x} end here')
+
+
+# for val in [1, 'a', 2, 'b', 3, 'c', 4, 'd', 5]:
+#     if type(val) == int:
+#         continue
+#     print(val)
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Write a loop that iterates over a range of numbers from 1 to 20. After printing 15, use break to stop printing numbers.
+
+# Write a loop that takes the input of "1111111devpipeline2222222" and uses continue and break to leave us with the output of "devpipeline".
     
+# for i in range(1, 20):
+#     if i == 15:
+#         break
+#     print(i)
+
+# for val in ("1111111devpipeline2222222"):
+#     if val == '1' or val == '2':
+#         continue
+#     print(val, end='')
+
+# for val in ("1111111devpipeline2222222"):
+#     if val.isalpha():
+#       print(val, end='')
 
 
+name = ''
+for val in ("1111111devpipeline2222222"):
+    if val != '1' or val != '2':
+        name += val
+        continue
+    print(name)
