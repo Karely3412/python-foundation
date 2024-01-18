@@ -81,8 +81,9 @@ for i in range(len(my_list) // 2):
     first = i
     second = len(my_list) - 1 -i
     # second = - 1 -i
-    temp = my_list[first]
-    my_list[first] = my_list[second]
-    my_list[second] = temp
+    # temp = my_list[first]
+    # my_list[first] = my_list[second]
+    # my_list[second] = temp
+    my_list[first], my_list[second] = my_list[second], my_list[first]
 
 print(my_list)
