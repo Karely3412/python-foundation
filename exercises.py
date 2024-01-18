@@ -425,9 +425,12 @@ else:
 #       print(val, end='')
 
 
-name = ''
-for val in ("1111111devpipeline2222222"):
-    if val != '1' or val != '2':
-        name += val
-        continue
-    print(name)
+# name = ''
+# for val in ("1111111devpipeline2222222"):
+#     if val != '1' or val != '2':
+#         name += val
+#         continue
+#     print(name)
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
