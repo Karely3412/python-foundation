@@ -45,4 +45,23 @@ list_sec = []
 #     if i == 'a' or i == 'e':
 #         print(i)
 
-# 4. 
+# 4. Separate odds and evens. Write code that will take a list of positive integers and will create a new list with all of the odds at the beginning of the list and all of the evens at the end of the list. For example:
+a_list = [1,5,8,2,4,8,1,3,5,9]
+
+b_list = []
+c_list = []
+
+
+for i in a_list:
+    if i % 2 != 0:
+        b_list.append(i)
+    
+for i in a_list:
+    if i % 2 == 0:
+        c_list.append(i)
+
+b_list.extend(c_list)
+# b_list += c_list
+
+print(b_list)
+# print(c_list)
