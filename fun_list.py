@@ -44,3 +44,5 @@ list_sec = []
 # for i in my_list:
 #     if i == 'a' or i == 'e':
 #         print(i)
+
+# 4. 
