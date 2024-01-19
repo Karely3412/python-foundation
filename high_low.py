@@ -19,7 +19,7 @@ That's correct!!!!
 def high_low():
     player_1 = int(input('Player 1 enter a number: \n'))      # <- integer 
 
-    while player_1 >= 101:
+    while player_1 >= 101 or player_1 <=0:
         player_1 = int(input("Oops! Choose a number between 1-100:\n "))
 
     print('I\'m thinking of a number between 1 and 100..\n')
