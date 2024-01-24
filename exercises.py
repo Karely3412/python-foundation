@@ -480,4 +480,11 @@ dict['meta_data']['account_type'] = 'free'  # <- this is replacing a nested valu
 if 'user' in dict:
     print(dict['user'])
 
-print(len(dict))  # <- this will give you back how many keys are at that level
+print(len(dict))  
+print(dict.get('active', 'not found'))  
+print(dict.items())  
+
+
+for key,value in dict.items():
+    print(key,value)
+
