@@ -446,15 +446,18 @@ Phoenix - Suns
 Houston - Rockets
 Miami - Heat
 
+Altering values syntax -> mascots['UCLA'] = 'Bears'
+Useful -> del mascots['utah']
 
-
-
+We could declare a empty dictionary then assign a key:value pairs to it with the syntax above
 """
 
 mascots = {
-    'BYU'    : 'Cougars',
-    'Utah'   : 'Utes',
-    'Oregon' : 'Ducks',
-    'UCLA'   : 'Bruins',
-    'UNLV'   : 'Rebels'
+    '' : '',
+    '' : '',
+    '' : '',
+    '' : '',
+    '' : ''
 }
+
+
