@@ -453,12 +453,26 @@ Nested Dictionary in a list -> mascots[0] for the index of the list & ['Key_name
 We could declare a empty dictionary then assign a key:value pairs to it with the syntax above
 """
 
-mascots = {
-    '' : '',
-    '' : '',
-    '' : '',
-    '' : '',
-    '' : ''
+dict = {
+    'user' : 'super-admin',
+    'active' : True,
+    'meta_data' : {
+        'user_uuid' : '8984d3df98fg4',
+        'last_login' : '01/24/2024 03:42:00',
+        'account_type' : 'paid',
+    },
+    'contact_info': {
+        'f-name' : 'karely',
+        'l-name' : 'partida',
+        'phone' : '0000000000',
+        'address' : '1234 street'
+    },
+    'profile_pics' : [
+        1,
+        2,
+        3
+    ]
 }
 
 
+dict['meta_data']['account_type'] = 'free'
