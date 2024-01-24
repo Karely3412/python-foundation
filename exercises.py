@@ -448,6 +448,7 @@ Miami - Heat
 
 Altering values syntax -> mascots['UCLA'] = 'Bears'
 Useful -> del mascots['utah']
+Nested Dictionary in a list -> mascots[0] for the index of the list & ['Key_name'] to get the value of the by the key name. mascots[0]['key_name']
 
 We could declare a empty dictionary then assign a key:value pairs to it with the syntax above
 """
