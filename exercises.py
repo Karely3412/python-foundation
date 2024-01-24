@@ -434,3 +434,27 @@ else:
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+"""
+** Dictionaries **
+Examples:
+
+NBA Teams
+
+Uta - Jazz
+Boston - Celtics
+Phoenix - Suns
+Houston - Rockets
+Miami - Heat
+
+
+
+
+"""
+
+mascots = {
+    'BYU'    : 'Cougars',
+    'Utah'   : 'Utes',
+    'Oregon' : 'Ducks',
+    'UCLA'   : 'Bruins',
+    'UNLV'   : 'Rebels'
+}
