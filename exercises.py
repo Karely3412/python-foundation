@@ -475,4 +475,9 @@ dict = {
 }
 
 
-dict['meta_data']['account_type'] = 'free'
+dict['meta_data']['account_type'] = 'free'  # <- this is replacing a nested value 
+
+if 'user' in dict:
+    print(dict['user'])
+
+print(len(dict))  # <- this will give you back how many keys are at that level
