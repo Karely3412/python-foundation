@@ -483,8 +483,17 @@ if 'user' in dict:
 print(len(dict))  
 print(dict.get('active', 'not found'))  
 print(dict.items())  
+print(dict.keys())  
 
 
 for key,value in dict.items():
     print(key,value)
+
+
+for key in dict.keys():
+    print(key)
+
+
+for key in dict.values():
+    print(key)
 
