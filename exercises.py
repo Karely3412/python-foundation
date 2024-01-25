@@ -475,25 +475,47 @@ dict = {
 }
 
 
+dict_2 = {
+    'user' : 'super-admin',
+    'active' : True,
+    'meta_data' : {
+        'user_uuid' : '8984d3df98fg4',
+        'last_login' : '01/24/2024 03:42:00',
+        'account_type' : 'paid',
+    },
+    'contact_info': {
+        'f-name' : 'karely',
+        'l-name' : 'partida',
+        'phone' : '0000000000',
+        'address' : '1234 street'
+    },
+}
+
+
+dict.update(dict_2)
+
 dict['meta_data']['account_type'] = 'free'  # <- this is replacing a nested value 
 
 if 'user' in dict:
     print(dict['user'])
 
 print(len(dict))  
-print(dict.get('active', 'not found'))  
-print(dict.items())  
-print(dict.keys())  
+# print(dict.get('active', 'not found'))  
+# print(dict.items())  
+# print(dict.keys())  
 
 
-for key,value in dict.items():
-    print(key,value)
+# for key,value in dict.items():
+#     print(key,value)
 
 
-for key in dict.keys():
-    print(key)
+# for key in dict.keys():
+#     print(key)
 
 
-for key in dict.values():
-    print(key)
+# for key in dict.values():
+#     print(key)
+
+
+
 
