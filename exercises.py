@@ -541,18 +541,41 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
         
 
 
-def count(str, letter):
-    count = 0
+# def count(str, letter):
+#     count = 0
     
-    for i in str:
-        if i == letter:
-            count += 1
+#     for i in str:
+#         if i == letter:
+#             count += 1
 
-    return count 
+#     return count 
 
-string = 'jdsdjiosjdlisj'
+# string = 'jdsdjiosjdlisj'
 
-print(count())
+# print(count())
+
+
+def max_num(num1, num2, num3, num4):
+    
+    if num1 > num2 or num1 > num3 or num1 > num4:
+        return num1
+
+
+
+
+print(max_num(1, 4, 8, 12))
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
