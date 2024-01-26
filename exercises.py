@@ -453,53 +453,53 @@ Nested Dictionary in a list -> mascots[0] for the index of the list & ['Key_name
 We could declare a empty dictionary then assign a key:value pairs to it with the syntax above
 """
 
-dict = {
-    'user' : 'super-admin',
-    'active' : True,
-    'meta_data' : {
-        'user_uuid' : '8984d3df98fg4',
-        'last_login' : '01/24/2024 03:42:00',
-        'account_type' : 'paid',
-    },
-    'contact_info': {
-        'f-name' : 'karely',
-        'l-name' : 'partida',
-        'phone' : '0000000000',
-        'address' : '1234 street'
-    },
-    'profile_pics' : [
-        1,
-        2,
-        3
-    ]
-}
+# dict = {
+#     'user' : 'super-admin',
+#     'active' : True,
+#     'meta_data' : {
+#         'user_uuid' : '8984d3df98fg4',
+#         'last_login' : '01/24/2024 03:42:00',
+#         'account_type' : 'paid',
+#     },
+#     'contact_info': {
+#         'f-name' : 'karely',
+#         'l-name' : 'partida',
+#         'phone' : '0000000000',
+#         'address' : '1234 street'
+#     },
+#     'profile_pics' : [
+#         1,
+#         2,
+#         3
+#     ]
+# }
 
 
-dict_2 = {
-    'user' : 'super-admin',
-    'active' : True,
-    'meta_data' : {
-        'user_uuid' : '8984d3df98fg4',
-        'last_login' : '01/24/2024 03:42:00',
-        'account_type' : 'paid',
-    },
-    'contact_info': {
-        'f-name' : 'karely',
-        'l-name' : 'partida',
-        'phone' : '0000000000',
-        'address' : '1234 street'
-    },
-}
+# dict_2 = {
+#     'user' : 'super-admin',
+#     'active' : True,
+#     'meta_data' : {
+#         'user_uuid' : '8984d3df98fg4',
+#         'last_login' : '01/24/2024 03:42:00',
+#         'account_type' : 'paid',
+#     },
+#     'contact_info': {
+#         'f-name' : 'karely',
+#         'l-name' : 'partida',
+#         'phone' : '0000000000',
+#         'address' : '1234 street'
+#     },
+# }
 
 
-dict.update(dict_2)
+# dict.update(dict_2)
 
-dict['meta_data']['account_type'] = 'free'  # <- this is replacing a nested value 
+# dict['meta_data']['account_type'] = 'free'  # <- this is replacing a nested value 
 
-if 'user' in dict:
-    print(dict['user'])
+# if 'user' in dict:
+#     print(dict['user'])
 
-print(len(dict))  
+# print(len(dict))  
 # print(dict.get('active', 'not found'))  
 # print(dict.items())  
 # print(dict.keys())  
@@ -515,6 +515,27 @@ print(len(dict))
 
 # for key in dict.values():
 #     print(key)
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Functions
+
+
+def math(num1, num2):
+    x = num1
+    y = num2
+
+    modu = x % y
+
+    if modu == 0:
+        return f' {x} is evenly divided {y}!'
+    elif modu != 0:
+        return f' {x} is not evenly divided {y}. Results {modu}'
+    
+
+print(math(20, 2))
+        
+    
 
 
 
