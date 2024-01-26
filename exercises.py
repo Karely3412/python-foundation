@@ -555,15 +555,13 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 # print(count())
 
 
-def max_num(num1, num2, num3, num4):
+# def max_num(num1, num2, num3, num4):
     
-    if num1 > num2 or num1 > num3 or num1 > num4:
-        return num1
+#     if num1 > num2 or num1 > num3 or num1 > num4:
+#         return num1
 
 
-
-
-print(max_num(1, 4, 8, 12))
+# print(max_num(1, 4, 8, 12))
 
 
 
