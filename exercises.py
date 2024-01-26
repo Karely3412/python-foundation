@@ -521,20 +521,39 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 # Functions
 
 
-def math(num1, num2):
-    x = num1
-    y = num2
+# def math(num1, num2):
+#     x = num1
+#     y = num2
 
-    modu = x % y
+#     if len(x) == 2:
+#         modu = x % y
+#     else:
+#         modu = y % x
 
-    if modu == 0:
-        return f' {x} is evenly divided {y}!'
-    elif modu != 0:
-        return f' {x} is not evenly divided {y}. Results {modu}'
+
+#     if modu == 0:
+#         return f' {x} is evenly divided {y}!'
+#     elif modu != 0:
+#         return f' {x} is not evenly divided {y}. Results {modu}'
     
 
-print(math(20, 2))
+# print(math(20, 2))
         
+
+
+def count(str, letter):
+    count = 0
+    
+    for i in str:
+        if i == letter:
+            count += 1
+
+    return count 
+
+string = 'jdsdjiosjdlisj'
+
+print(count())
+
     
 
 
