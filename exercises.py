@@ -534,7 +534,7 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 #     if modu == 0:
 #         return f' {x} is evenly divided {y}!'
 #     elif modu != 0:
-#         return f' {x} is not evenly divided {y}. Results {modu}'
+        # return f' {x} is not evenly divided {y}. Results {modu}'
     
 
 # print(math(20, 2))
