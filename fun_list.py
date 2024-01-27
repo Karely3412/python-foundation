@@ -52,40 +52,41 @@ list_sec = []
 # - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # 4. Separate odds and evens. Write code that will take a list of positive integers and will create a new list with all of the odds at the beginning of the list and all of the evens at the end of the list. For example:
-# a_list = [1,5,8,2,4,8,1,3,5,9,4,8,1,3,5,4,8,1,3,5,1,5,8,2,4]
+a_list = [1,5,8,2,4,8,1,3,5,9,4,8,1,3,5,4,8,1,3,5,1,5,8,2,4]
 
 
-# def rearranged_list(list):
-#     b_list = []
+def rearranged_list(a_list):
+    b_list = []
+    c_list = []
 
-#     for i in list:
-#         if i % 2 != 0:
-#             b_list.append(i)
+    for i in a_list:
+        if i % 2 != 0:
+            b_list.append(i)
+        else:
+            c_list.append(i)
+        
+    concat_list = b_list + c_list
 
-#     for i in list:
-#         if i % 2 == 0:
-#             b_list.append(i)
+    return concat_list
 
+print(rearranged_list(a_list))
 
-#     print(b_list)
-
-# rearranged_list(a_list)
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # 5.
 
-def man_rever():    
-    my_list = [1, 2, 3, 4, 5, 6, 7, 8]
+# def man_rever():    
+#     my_list = [1, 2, 3, 4, 5, 6, 7, 8]
 
-    new_list = []
+#     new_list = []
 
-    for i in my_list:
-        new_list.insert(0, i)
+#     for i in my_list:
+#         new_list.insert(0, i)
 
-    print(new_list)   
+#     print(new_list)   
 
-print(man_rever())   
+# print(man_rever())   
   
 # - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Hayden's thoughts(: !
