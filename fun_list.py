@@ -72,6 +72,22 @@ def rearranged_list(a_list):
 print(rearranged_list(a_list))
 
 
+# def rearranged_list(a_list):
+#     b_list = []
+
+#     for i in a_list:
+#         if i % 2 != 0:
+#             b_list.append(i)
+
+#     for i in a_list:
+#         if i % 2 == 0:
+#             b_list.append(i)
+
+
+#     print(b_list)
+
+# rearranged_list(a_list)
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # 5.
