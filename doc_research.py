@@ -25,7 +25,7 @@ outputs the number of occurrences it finds in the list.
 
 """
 
-Method syntax -> list.count(element)
+Method syntax -> list.index(element)
 
 - Param Val -> Required
 
