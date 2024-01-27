@@ -55,12 +55,14 @@ def football_teams():
 
     print('**** Big12 Football Teams ****\n')
     question = input('What would you like to do? \n')
-    # print(question)
 
+    teams_dict = {
+        'Chicago': 'Bears',
+        'Dallas': 'Cowboys',
+        'Miami': 'Dolphins'
+    }
+    
     while True:
-
-        # statement1 = input('Enter a Team Location: ')
-        # statement2 = input('Enter a Team Mascot: ')
 
         options_list = [
         '(A)dd a new team', 
@@ -81,18 +83,35 @@ def football_teams():
         }
 
 
-        empty_dict = {}
-
         if question == 'a' or question == 'A':
-            print(f'{answers_obj["answer1"]}\n')
+            statement1 = input('Enter a Team Location: ')
+            statement2 = input('Enter a Team Mascot: ')
+
+            print(statement1)
+            print(statement2)
+
+            teams_dict[statement1] = statement2
+            print(teams_dict)
+
+            print(f'{statement1} {statement2}{answers_obj["answer1"]}\n')
             print('Anything else you\'d like to do? \n')
+
             the_loop(options_list)
             question = input()
 
         elif question == 'r' or question == 'R':
+            statement1 = input('Enter a Team Location: ')
+
+            print(statement1)
+
+            del teams_dict[statement1]
+            print(teams_dict)
+
+
             print(f'{answers_obj["answer2"]}\n')
-            question = input('Anything else you\'d like to do? \n')
+            print('Anything else you\'d like to do? \n')
             the_loop(options_list)
+            question = input()
 
         elif question == 'q' or question == 'Q':
             print(f'{answers_obj["answer3"]}\n')
