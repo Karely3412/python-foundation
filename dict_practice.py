@@ -63,14 +63,14 @@ def football_teams():
     }
     
     while True:
-
+        
         options_list = [
         '(A)dd a new team', 
         '(R)emove a team', 
         '(Q)uit?'
         ]
 
-        def the_loop(list):
+        def the_loop(options_list):
             for i in options_list:
                 print(i)
 
@@ -82,41 +82,31 @@ def football_teams():
 
         }
 
+        if question.lower() == 'a':
+            team_location = input('Enter a Team Location: ')
+            team_mascot = input('Enter a Team Mascot: ')
 
-        if question == 'a' or question == 'A':
-            statement1 = input('Enter a Team Location: ')
-            statement2 = input('Enter a Team Mascot: ')
-
-            print(statement1)
-            print(statement2)
-
-            teams_dict[statement1] = statement2
+            teams_dict[team_location] = team_mascot
             print(teams_dict)
 
-            print(f'{statement1} {statement2}{answers_obj["answer1"]}\n')
-            print('Anything else you\'d like to do? \n')
+            print(f'{team_location} {team_mascot}{answers_obj["answer1"]}\n')
 
-            the_loop(options_list)
-            question = input()
+        elif question.lower() == 'r':
+            team_location = input('Enter a Team Location: ')
+            team_mascot = teams_dict[team_location]
 
-        elif question == 'r' or question == 'R':
-            statement1 = input('Enter a Team Location: ')
-
-            print(statement1)
-
-            del teams_dict[statement1]
+            del teams_dict[team_location]
             print(teams_dict)
 
+            print(f'{team_location} {team_mascot}{answers_obj["answer2"]}\n')
 
-            print(f'{answers_obj["answer2"]}\n')
-            print('Anything else you\'d like to do? \n')
-            the_loop(options_list)
-            question = input()
-
-        elif question == 'q' or question == 'Q':
+        elif question.lower() == 'q':
             print(f'{answers_obj["answer3"]}\n')
             break
 
+        print('Anything else you\'d like to do? \n')
+        the_loop(options_list)
+        question = input()
 
         
 football_teams()
