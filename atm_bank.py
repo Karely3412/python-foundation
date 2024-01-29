@@ -60,16 +60,19 @@ Goodbye. Please come again
 """
 
 def atm_bank():
-    print("Hello and Welcome to the Bank of Python!")
+    print("Hello and Welcome to the Bank of Python!\n")
 
     def balance():
-        user_balance = '500'
-        view_balance = print(f'Your current balance is {user_balance}')
+        user_balance = 500
+        view_balance = print(f"Your current balance is ${user_balance:.2f}")
         return view_balance
     
 
-    # def deposit():
-
+    def deposit(depo_amou):
+        deposit_amount = input('Enter the amount you\'d like to deposit: ')
+        new_total_amount = depo_amou + int(deposit_amount)
+        view_new_balance = print(f"Your current balance is ${new_total_amount:.2f}")
+        return view_new_balance
 
 
 
@@ -78,9 +81,9 @@ def atm_bank():
         users_input = input()
 
         if users_input.lower() == 'b':
-           balance()
+           user_balance = balance()
         elif users_input.lower() == 'd':
-            print('balance test')
+            deposit(user_balance)
         elif users_input.lower() == 'w':
             print('balance test')
         elif users_input.lower() == 'q':
