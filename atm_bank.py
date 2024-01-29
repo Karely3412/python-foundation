@@ -62,13 +62,30 @@ Goodbye. Please come again
 def atm_bank():
     print("Hello and Welcome to the Bank of Python!")
 
+    def balance():
+        user_balance = '500'
+        view_balance = print(f'Your current balance is {user_balance}')
+        return view_balance
+    
+
+    # def deposit():
+
+
+
+
     while True:
         print('Please select from the following menu options:\n (B)alance\n','(D)eposit\n','(W)ithdraw\n','(Q)uit\n')
         users_input = input()
 
         if users_input.lower() == 'b':
+           balance()
+        elif users_input.lower() == 'd':
             print('balance test')
-
+        elif users_input.lower() == 'w':
+            print('balance test')
+        elif users_input.lower() == 'q':
+            return 'Goodbye. Please come again'
+        
 
 
 
