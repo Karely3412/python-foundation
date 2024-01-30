@@ -567,15 +567,19 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Exporting Module
 
-import random
+# import random
 
-def rand_gen():
-    rand_num = random.randrange(0,100)
-    print(rand_num)
-    return rand_num
+# def rand_gen():
+#     rand_num = random.randrange(0,100)
+#     print(rand_num)
+#     return rand_num
 
 
-rand_gen()
+# rand_gen()
+
+
+
+
 
 
 
