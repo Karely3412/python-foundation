@@ -61,18 +61,25 @@ Goodbye. Please come again
 
 def atm_bank():
     print("Hello and Welcome to the Bank of Python!\n")
+    user_balance = 500
 
-    def balance():
-        user_balance = 500
-        view_balance = print(f"Your current balance is ${user_balance:.2f}")
-        return view_balance
+    def balance(user_balance):
+        print(f"Your current balance is ${user_balance:,.2f}\n")
+ 
     
 
-    def deposit(depo_amou):
-        deposit_amount = input('Enter the amount you\'d like to deposit: ')
-        new_total_amount = depo_amou + int(deposit_amount)
-        view_new_balance = print(f"Your current balance is ${new_total_amount:.2f}")
-        return view_new_balance
+    def deposit(user_balance):
+        deposit_amount = int(input('Enter the amount you\'d like to deposit: \n'))
+        new_total_amount = user_balance + deposit_amount
+        print(f"Your current balance is ${new_total_amount:,.2f}\n")
+        return new_total_amount
+
+
+    def withdraw_amount(user_balance):
+        withdraw_amount = int(input('Enter the amount you\'d like to withdraw: \n'))
+        new_total_amount = user_balance - withdraw_amount
+        print(f"Your current balance is ${new_total_amount:,.2f}\n")
+        return new_total_amount
 
 
 
@@ -81,22 +88,46 @@ def atm_bank():
         users_input = input()
 
         if users_input.lower() == 'b':
-           user_balance = balance()
+            balance(user_balance)
         elif users_input.lower() == 'd':
-            deposit(user_balance)
+            user_balance = deposit(user_balance)
         elif users_input.lower() == 'w':
-            print('balance test')
+            user_balance = withdraw_amount(user_balance)
         elif users_input.lower() == 'q':
             return 'Goodbye. Please come again'
         
 
-
-
-
 print(atm_bank())
       
 
+"""
+SUDO:S
+- Already have balance func
+- Deposit: func (not working yet)
+    - Paramaters -> Balance
+        - Balance will be an integer
 
+    - Users input -> Deposit 
+        - Initally deposit will be a string
+
+    - Balance + deposit = new total amount 
+    - Reassign balance so that it's updating
+
+- Withdraw:
+    - Paramaters -> Balance
+        - Balance will be an integer
+
+    - Users input -> Deposit 
+        - Initally deposit will be a string
+
+    - Balance - withdraw anount = new total amount
+    - Reassign balance so that it's updating
+
+
+
+
+
+"""
 
 
 
