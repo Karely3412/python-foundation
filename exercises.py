@@ -579,6 +579,18 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 
 
 
+import wikipedia
+
+search_topic = input('Enter a search topic: ')
+
+result = wikipedia.search(search_topic)
+
+print(result)
+
+
+
+
+
 
 
 
