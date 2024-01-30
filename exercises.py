@@ -564,8 +564,18 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 # print(max_num(1, 4, 8, 12))
 
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Exporting Module
+
+import random
+
+def rand_gen():
+    rand_num = random.randrange(0,100)
+    print(rand_num)
+    return rand_num
 
 
+rand_gen()
 
 
 

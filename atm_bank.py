@@ -101,7 +101,7 @@ print(atm_bank())
       
 
 """
-SUDO:S
+SUDO:
 - Already have balance func
 - Deposit: func (not working yet)
     - Paramaters -> Balance
@@ -122,10 +122,6 @@ SUDO:S
 
     - Balance - withdraw anount = new total amount
     - Reassign balance so that it's updating
-
-
-
-
 
 """
 
