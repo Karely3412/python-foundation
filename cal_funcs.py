@@ -40,7 +40,7 @@ def is_leap_year(year):
 user_input = 3
 first_week = [1, 2, 3, 4, 5, 6, 7]
 
-for i in list:
+for i in first_week:
     if i in list:    
        print(i)
             
