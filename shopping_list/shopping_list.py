@@ -83,11 +83,13 @@ Goodbye!
 print('Welcome to your shopping list program!\n')
 
 def print_shopping_list():
-    with open('shopping_list/stored_list.txt', 'rt') as a_file:
-        str_shop_list = a_file.read()
+    with open('shopping_list/stored_list.txt', 'r') as a_file:
+        read_file = a_file.read()
+        if not read_file:
+            print('There are 0 items in your shopping list.\n')
+        else:
+            print(f"Your current shopping list items are:\n\n{read_file}")
         
-
-
 
 def add_to_cart(user_input):
     while True:
@@ -104,24 +106,27 @@ def clear_cart():
    with open('shopping_list/stored_list.txt', 'w'):
         print('Your shopping list has been cleared!\n')
 
+def while_true():
+    while True:
+        print('What would you like to do? \n')
+        user_input = input(' (P)rint the shopping list\n (A)dd an item to the shopping list\n (C)lear the shopping list\n (Q)uit\n').lower()
 
-while True:
-    print('What would you like to do? \n')
-    user_input = input(' (P)rint the shopping list\n (A)dd an item to the shopping list\n (C)lear the shopping list\n (Q)uit\n').lower()
+
+        if user_input == "p":
+            print_shopping_list()
+
+        elif user_input == "a":
+            add_to_cart(user_input)
+
+        elif user_input == "c":
+            clear_cart()
+
+        elif user_input == "q":
+            print('-- GoodBye! --')
+            break
 
 
-    if user_input == "p":
-        print_shopping_list()
-
-    elif user_input == "a":
-        add_to_cart(user_input)
-
-    elif user_input == "c":
-        clear_cart()
-
-    elif user_input == "q":
-        print('-- GoodBye! --')
-        break
+while_true()
     
 
 
