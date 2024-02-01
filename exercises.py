@@ -600,6 +600,11 @@ my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 print('*'.join(my_list))
 
 
+fruit_list = ['apple', 'banana', 'grape', 'orange']
+
+print(' and '.join(fruit_list))
+
+
 
 
 
