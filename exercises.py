@@ -590,11 +590,16 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 
 
 
-
 name = "Barker, Bob, Miami, FL"
-name_split_list = name.split(',' 2)
+name_split_list = name.split(',', 2)
 
-print(f'{firs}')
+print(f'\n{name_split_list}\n')
+
+last_name, first_name, location = name_split_list
+print(f'\n{first_name} {last_name}, lives in {location}\n')
+
+
+
 
 
 
