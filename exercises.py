@@ -578,6 +578,31 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 # rand_gen()
 
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Advanced String Operations
+
+
+# name = "Barker, Bob"
+
+# last_name, first_name = name.split(', ')
+
+# print(first_name + " " + last_name)
+
+
+
+
+name = "Barker, Bob, Miami, FL"
+name_split_list = name.split(',' 2)
+
+print(f'{firs}')
+
+
+
+
+
+
+
+
 
 
 
