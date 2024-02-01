@@ -81,19 +81,37 @@ Goodbye!
 
 
 print('Welcome to your shopping list program!\n')
-print('What would you like to do? \n')
 
-menu = [
-'(P)rint the shopping list',
-'(A)dd an item to the shopping list',
-'(C)lear the shopping list',
-'(Q)uit'
-]
 
-for i in menu: 
-    print(i)
 
-user_input = input('')
+def add_to_cart(user_input):
+    print("What would you like to add ('Return' to return to main menu)?")
+    user_input = input()
+
+    with open('shopping_list/stored_list.txt', 'a') as a_file:
+        a_file.write(user_input)
+
+
+while True:
+    print('What would you like to do? \n')
+    user_input = input(' (P)rint the shopping list\n (A)dd an item to the shopping list\n (C)lear the shopping list\n (Q)uit\n').lower()
+
+
+    if user_input == "p":
+        print('There are 0 items in your shopping list')
+    elif user_input == "a":
+        add_to_cart(user_input)
+    elif user_input == "c":
+        print('testing c')
+    elif user_input == "r":
+        print('testing r')
+    elif user_input == "q":
+        print('-- GoodBye! --')
+        break
+    
+        
+
+
 
 
 
