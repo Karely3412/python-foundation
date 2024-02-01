@@ -82,10 +82,10 @@ Goodbye!
 
 print('Welcome to your shopping list program!\n')
 
-
 def print_shopping_list():
     with open('shopping_list/stored_list.txt', 'rt') as a_file:
-        print(a_file.read())
+        str_shop_list = a_file.read()
+        
 
 
 
@@ -95,7 +95,7 @@ def add_to_cart(user_input):
         user_input = input().lower()
 
         with open('shopping_list/stored_list.txt', 'a') as a_file:
-            a_file.write(user_input)
+            a_file.write(f'{user_input}\n')
         if user_input == "r":
             break
 
