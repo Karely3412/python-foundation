@@ -9,4 +9,6 @@ with open('example_file/string_split.txt', 'rt') as a_file:
         print(i)
 
 
-# with open('example_file/string_split.txt', 'rt')
+with open('example_file/string_split.txt', 'w') as a_file:
+    for i in split_code:
+        a_file.write(i + '\n')
