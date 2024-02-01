@@ -91,6 +91,11 @@ def add_to_cart(user_input):
     with open('shopping_list/stored_list.txt', 'a') as a_file:
         a_file.write(user_input)
 
+    
+def clear_cart():
+   with open('shopping_list/stored_list.txt', 'w'):
+        print('Your shopping list has been cleared!\n')
+
 
 while True:
     print('What would you like to do? \n')
@@ -102,7 +107,7 @@ while True:
     elif user_input == "a":
         add_to_cart(user_input)
     elif user_input == "c":
-        print('testing c')
+        clear_cart()
     elif user_input == "r":
         print('testing r')
     elif user_input == "q":
