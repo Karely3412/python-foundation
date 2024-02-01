@@ -83,13 +83,21 @@ Goodbye!
 print('Welcome to your shopping list program!\n')
 
 
+def print_shopping_list():
+    with open('shopping_list/stored_list.txt', 'rt') as a_file:
+        print(a_file.read())
+
+
 
 def add_to_cart(user_input):
-    print("What would you like to add ('Return' to return to main menu)?")
-    user_input = input()
+    while True:
+        print("What would you like to add ('Return' to return to main menu)?")
+        user_input = input().lower()
 
-    with open('shopping_list/stored_list.txt', 'a') as a_file:
-        a_file.write(user_input)
+        with open('shopping_list/stored_list.txt', 'a') as a_file:
+            a_file.write(user_input)
+        if user_input == "r":
+            break
 
     
 def clear_cart():
@@ -103,17 +111,20 @@ while True:
 
 
     if user_input == "p":
-        print('There are 0 items in your shopping list')
+        print_shopping_list()
+
     elif user_input == "a":
         add_to_cart(user_input)
+
     elif user_input == "c":
         clear_cart()
-    elif user_input == "r":
-        print('testing r')
+
     elif user_input == "q":
         print('-- GoodBye! --')
         break
     
+
+
         
 
 
