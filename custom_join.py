@@ -12,7 +12,6 @@ def cust_join(it_obj, separ):
             str_list += it_obj_str2
             
     
-            
     return str_list
 
 
