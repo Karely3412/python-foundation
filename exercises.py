@@ -609,11 +609,31 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 
 # Sliceing
 
-my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-my_list[1:6:2] = [18, 19, 20]
+# my_list[1:6:2] = [18, 19, 20]
+
+# print(my_list)
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+user_responce = input("Would you like to quite? (y/n)")
+
+
+my_list = []
+
+my_list.append(user_responce)
+
+
+for responce in my_list:
+    if responce not in ['y', 'n']:
+        user_responce = input('Please enter a "y" or a "n": ')
+        my_list.append(user_responce)
 
 print(my_list)
+
+
+
 
 
 
