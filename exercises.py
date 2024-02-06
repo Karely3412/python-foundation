@@ -617,20 +617,28 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-user_responce = input("Would you like to quite? (y/n)")
+# user_responce = input("Would you like to quite? (y/n)")
 
 
-my_list = []
+# my_list = []
 
-my_list.append(user_responce)
+# my_list.append(user_responce)
 
 
-for responce in my_list:
-    if responce not in ['y', 'n']:
-        user_responce = input('Please enter a "y" or a "n": ')
-        my_list.append(user_responce)
+# for responce in my_list:
+#     if responce not in ['y', 'n']:
+#         user_responce = input('Please enter a "y" or a "n": ')
+#         my_list.append(user_responce)
 
-print(my_list)
+# print(my_list)
+
+
+x = 5 
+
+y = 8
+
+if x == 5 or y == 7:
+    print("Hello!!(:")
 
 
 
