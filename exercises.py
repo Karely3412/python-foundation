@@ -641,6 +641,23 @@ if x == 5 or y == 7:
     print("Hello!!(:")
 
 
+"""
+
+True AND True     | True
+True AND False    | False
+False AND False   | False 
+False AND False   | False
+
+
+True OR True      | True
+True OR False     | True
+False OR True     | True
+False OR False    | False
+
+
+
+
+"""
 
 
 
