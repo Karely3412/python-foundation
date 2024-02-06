@@ -595,18 +595,25 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+# my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 
-print('*'.join(my_list))
-
-
-fruit_list = ['apple', 'banana', 'grape', 'orange']
-
-print(' and '.join(fruit_list))
+# print('*'.join(my_list))
 
 
+# fruit_list = ['apple', 'banana', 'grape', 'orange']
+
+# print(' and '.join(fruit_list))
 
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Sliceing
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+my_list[1:6:2] = [18, 19, 20]
+
+print(my_list)
 
 
 
