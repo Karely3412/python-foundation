@@ -633,12 +633,12 @@ We could declare a empty dictionary then assign a key:value pairs to it with the
 # print(my_list)
 
 
-x = 5 
+# x = 5 
 
-y = 8
+# y = 8
 
-if x == 5 or y == 7:
-    print("Hello!!(:")
+# if x == 5 or y == 7:
+#     print("Hello!!(:")
 
 
 """
@@ -653,8 +653,6 @@ True OR True      | True
 True OR False     | True
 False OR True     | True
 False OR False    | False
-
-
 
 
 """

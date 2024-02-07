@@ -10,10 +10,6 @@ def slice(iter_obj):
 
 
 
-
-
-
-
 print(slice(my_list))
 
 
