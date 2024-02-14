@@ -31,7 +31,7 @@ def print_address_book(list_of_dicts, search='', with_indexes=False):
          search in row["State"]):
             matches_search = False
       if matches_search:
-         print(f'{num_string} {row["First Name"]:10} {row["Last Name"]:15} {row["Address"]:20} {row["City"]:15} {row["State"]:^6})
+         print(f'{num_string} {row["First Name"]:10} {row["Last Name"]:15} {row["Address"]:20} {row["City"]:15} {row["State"]:^6}')
 
 def find_user():
    return input('Enter a search term: ')
@@ -63,10 +63,10 @@ def save_address_book(address_book):
 # Load the address book
 # Fields "First Name", "Last Name", "Address", "City", "State"]
 address_book = []
-with open('address_book.csv', 'r', newline='') as csvfile:
-   csvreader = csv.DictReader(csvfile)
-   for row in csvreader:
-      address_book.append(row)
+# with open('address_book.csv', 'r', newline='') as csvfile:
+#    csvreader = csv.DictReader(csvfile)
+#    for row in csvreader:
+#       address_book.append(row)
 
 search_term = ''
 
@@ -89,3 +89,13 @@ while True:
       search_term = find_user()
    elif user_input == 'q':
       break
+   
+
+"""
+1. On this line it's missing ' on line 34.
+
+
+
+
+"""
+
