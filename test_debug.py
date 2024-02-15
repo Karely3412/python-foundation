@@ -75,7 +75,7 @@ while True:
    print_address_book(address_book, search=search_term)
    search_term = ''
    print_menu()
-   user_input = input()
+   user_input = input().upper()
 
    if user_input == 'A':
       add_user(address_book)
@@ -93,7 +93,7 @@ while True:
 
 """
 1. On this line it's missing ' on line 34.
-
+2. .upper() needed to be added on line 80.
 
 
 

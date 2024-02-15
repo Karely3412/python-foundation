@@ -679,6 +679,7 @@ If it is greater subract the number.
 
 36
 
+
 128 64 32 16 8 4 2 1
 0   1  1  0  1 1 1 1
 
@@ -725,10 +726,6 @@ If it is greater subract the number.
 1   0  0  1  0 0 0 0
 
 128 + 16 = 144
-
-
-
-
 
 
 
