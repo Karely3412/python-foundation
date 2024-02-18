@@ -24,10 +24,10 @@ def print_address_book(list_of_dicts, search='', with_indexes=False):
       
       matches_search = True
       if search:
-         if not (search in row["First Name"] or \
-         search in row["LastName"] or \
-         search in row["Address"] or \
-         search in row["City"] or \
+         if not (search in row["First Name"] or 
+         search in row["Last Name"] or
+         search in row["Address"] or
+         search in row["City"] or
          search in row["State"]):
             matches_search = False
       if matches_search:
@@ -39,11 +39,11 @@ def find_user():
 def add_user(address_book):
    print('Add a new User:')
    new_user = {}
-   new_user["First Name"] = input(' First Name: ')
-   new_user["Last Name"] = input('  Last Name: ')
-   new_user["Address"] = input('    Address: ')
-   new_user["City"] = input('       City: ')
-   new_user["State"] = input('      State: ')
+   new_user["First Name"] = input('First Name: ')
+   new_user["Last Name"] = input('Last Name: ')
+   new_user["Address"] = input('Address: ')
+   new_user["City"] = input('City: ')
+   new_user["State"] = input('State: ')
    
    address_book.append(new_user)
 
@@ -94,6 +94,8 @@ while True:
 """
 1. On this line it's missing ' on line 34.
 2. .upper() needed to be added on line 80.
+3. removed / (back slashes) on lines 27 - 28
+4. Line 28 Needed a space between Last & Name
 
 
 
