@@ -1,12 +1,12 @@
 import csv
 
 def print_menu():
-   print('\n**** Address Book ****')
-   print('What would you like to do?')
-   print(' (A)dd a name')
-   print(' (R)emove a name')
-   print(' (F)ind a name')
-   print(' (Q)uit')
+    print('\n**** Address Book ****')
+    print('What would you like to do?')
+    print(' (A)dd a name')
+    print(' (R)emove a name')
+    print(' (F)ind a name')
+    print(' (Q)uit')
 
 def print_address_book(list_of_dicts, search='', with_indexes=False):
     leader_title = ''
