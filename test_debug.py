@@ -37,7 +37,7 @@ def find_user():
    return input('Enter a search term: ')
 
 def add_user(address_book):
-    print('Add a new User:')
+    print('Add a new User: ')
     new_user = {}
     new_user["First Name"] = input('First Name: ')
     new_user["Last Name"] = input('Last Name: ')
@@ -54,19 +54,20 @@ def remove_user(address_book):
     address_book.pop(user_input)
 
 def save_address_book(address_book):
-    with open('address_book.csv', 'w', newline='') as csvout:
-        csvwriter = csv.DictWriter(csvout, fieldnames=address_book[0].keys())
-        csvwriter.writeheader()
-        csvwriter.writerows(address_book)
+    if address_book != []:
+        with open('address_book.csv', 'w', newline='') as csvout:
+            csvwriter = csv.DictWriter(csvout, fieldnames=address_book[0].keys())
+            csvwriter.writeheader()
+            csvwriter.writerows(address_book)
 
 
 # Load the address book
 # Fields "First Name", "Last Name", "Address", "City", "State"]
 address_book = []
-# with open('address_book.csv', 'r', newline='') as csvfile:
-#    csvreader = csv.DictReader(csvfile)
-#    for row in csvreader:
-#       address_book.append(row)
+with open('address_book.csv', 'r', newline='') as csvfile:
+   csvreader = csv.DictReader(csvfile)
+   for row in csvreader:
+      address_book.append(row)
 
 search_term = ''
 
