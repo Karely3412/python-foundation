@@ -24,17 +24,17 @@ def print_address_book(list_of_dicts, search='', with_indexes=False):
     
        matches_search = True
        if search:
-            if not (search in row["First Name"] or 
-            search in row["Last Name"] or
-            search in row["Address"] or
-            search in row["City"] or
-            search in row["State"]):
+            if not (search in row["First Name"].lower() or 
+            search in row["Last Name"].lower() or
+            search in row["Address"].lower() or
+            search in row["City"].lower() or
+            search in row["State"].lower()):
                matches_search = False
        if matches_search:
             print(f'{num_string} {row["First Name"]:10} {row["Last Name"]:15} {row["Address"]:20} {row["City"]:15} {row["State"]:^6}')
 
 def find_user():
-   return input('Enter a search term: ')
+   return input('Enter a search term: ').lower()
 
 def add_user(address_book):
     print('Add a new User: ')
@@ -98,8 +98,7 @@ while True:
 5. Indentation was incorrect.
 6. Save_address_book needed a guard clause to check if address book is empty
 7. Replaced lower case q with upper
-
-
+8. Added 
 
 """
 
