@@ -87,8 +87,8 @@ while True:
        save_address_book(address_book)
     elif user_input == 'F':
        search_term = find_user()
-    elif user_input == 'q':
-       break
+    elif user_input == 'Q':
+        break
 
 """  
 1. On this line it's missing ' on line 34.
@@ -96,6 +96,8 @@ while True:
 3. removed / (back slashes) on lines 27 - 28
 4. Line 28 Needed a space between Last & Name
 5. Indentation was incorrect.
+6. Save_address_book needed a guard clause to check if address book is empty
+
 
 
 
