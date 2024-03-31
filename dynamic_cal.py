@@ -5,6 +5,18 @@ Function
     - Month
     - Year
     - Print the calendar
+    Funcs required:
+        - func for comparing months
+            - conditional (if statement)
+            if !leap year or it's !30 days:
+                print(31 day calendar)
+            if !leap year or it's !31 days:
+                print(30 day calendar)
+            else:
+                print(leap calendar)
+
+        - func for comparing years
+
 Formatting
     - f'string
     - 
@@ -18,22 +30,66 @@ Formatting
         -
     c. 30 days - April (4), June (6), September (9), November (11)
         -
-
+            
 """
 
 
 
+def is_leap_year(year):
+    #true or false
+    print("is_leap_year")
 
 
-def dynamic_cal(month, year):
+def days_in_a_month(month, year):
+    months_31_days = [1, 3, 5, 7, 8, 10, 12]
+    months_30_days = [4, 6, 9, 11]
+    names_of_months = ['January', "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+    # if not months_30_days and not months_31_days:
+    #      return (False, 'Invalid month. Enter a digit between 1-12')
+
+    if month in months_31_days:
+        return 31
+    elif month in months_30_days:
+        return 30
+    else:
+        if is_leap_year(year):
+            return 29
+        return 28
+    
+
+    """
+    - conditional (if statement)
+    if is_leap_year:
+        if month == months_31_days:
+            return 31
+        elif months_30_days:
+            return 30
+        else:
+            return 28
+    return True
+        
+    """
+
+# def month_formatter():
+    """
+    compare 28 30 31 & isleap year
+    Need to figure out how to print(the name of the month)
+    """
+#     print("formatter")
+    
 
 
-    while True:
-
-        month_question = input('Enter a month from (1-12): ')
-        year_question = input('Enter a year after 1970: ')
-
-
+# while True:
+#     month_question = input('Enter a month from (1-12): ')
+#     year_question = input('Enter a year after 1970: ')
+#     if 
+#     if !is_leap_year || it's !30 days:
+#         print(31 day calendar)
+#     if !leap year or it's !31 days:
+#         print(30 day calendar)
+#     else:
+#         print(leap calendar)
 
 
 
