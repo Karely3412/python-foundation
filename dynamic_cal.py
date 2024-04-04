@@ -41,33 +41,29 @@ def is_leap_year(year):
 
 
 def days_in_a_month(month, year):
-    months_31_days = [1, 3, 5, 7, 8, 10, 12]
-    months_30_days = [4, 6, 9, 11]
+    months_31_days = [0, 2, 4, 6, 7, 9, 11]
+    months_30_days = [3, 5, 8, 10]
     names_of_months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    month_index = []
 
 
     # if not months_30_days and not months_31_days:
     #      return (False, 'Invalid month. Enter a digit between 1-12')
 
 
-    if month in months_31_days:
-        month_index.append(month)
-        # print(month_index)
-        for i in month_index:
-            print(i)
-            if i in names_of_months:
-                print(names_of_months.index(i))
+    if month-1 in months_31_days:
+        print(names_of_months[month-1])
+            
         # return 31
-    elif month in months_30_days:
-        return 30
+    elif month-1 in months_30_days:
+        print(names_of_months[month-1])
+        # return 30
     else:
         if is_leap_year(year):
             return 29
         return 28
     
 
-days_in_a_month(1, 2012)
+days_in_a_month(3, 2012)
 
 # def month_formatter():
     # """
