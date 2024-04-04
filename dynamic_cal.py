@@ -36,40 +36,45 @@ Formatting
 
 
 def is_leap_year(year):
-    #true or false
-    print("is_leap_year")
+    if ( year % 4 == 0 and year % 100 != 0 ) or ( year % 400 == 0 ):
+        print('True')
+        return True
+    else:
+        print('False')
+        return False
 
 
 def days_in_a_month(month, year):
     months_31_days = [0, 2, 4, 6, 7, 9, 11]
     months_30_days = [3, 5, 8, 10]
     names_of_months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
+    my_return = []
 
     # if not months_30_days and not months_31_days:
     #      return (False, 'Invalid month. Enter a digit between 1-12')
 
 
     if month-1 in months_31_days:
-        print(names_of_months[month-1])
+        my_return.append(31)
+        my_return.append(names_of_months[month-1])
+        # print(my_return)
+        return my_return
             
-        # return 31
     elif month-1 in months_30_days:
-        print(names_of_months[month-1])
-        # return 30
+        my_return.append(30)
+        my_return.append(names_of_months[month-1])
+        # print(my_return)
+        return my_return
     else:
         if is_leap_year(year):
             return 29
         return 28
     
 
-days_in_a_month(3, 2012)
+days_in_a_month(2, 2023)
 
 # def month_formatter():
-    # """
-    # compare 28 30 31 & isleap year
-    # Need to figure out how to print(the name of the month)
-    # """
+   
 #     print("formatter")
     
 
