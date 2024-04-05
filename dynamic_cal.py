@@ -57,25 +57,48 @@ def days_in_a_month(month, year):
     if month-1 in months_31_days:
         my_return.append(31)
         my_return.append(names_of_months[month-1])
-        # print(my_return)
+        print(my_return)
         return my_return
             
     elif month-1 in months_30_days:
         my_return.append(30)
         my_return.append(names_of_months[month-1])
-        # print(my_return)
+        print(my_return)
         return my_return
     else:
         if is_leap_year(year):
+            print('29')
             return 29
         return 28
     
 
-days_in_a_month(2, 2023)
 
-# def month_formatter():
+
+def month_formatter(month, year):
+
+    my_return = days_in_a_month(month, year)
+
+    if my_return == 28:
+        print('28 days')
+
+    if my_return == 29:
+        print('29 days')
+    
+    # if my_return[0] == 30:
+    #     print(my_return[0])
+
+    # if my_return[0] == 31:
+    #     print(my_return[0])
+
+
+
+days_in_a_month(2, 2013)
+month_formatter(2, 2013)
+     
+    
+
    
-#     print("formatter")
+
     
 
 
