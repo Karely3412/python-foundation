@@ -44,64 +44,14 @@ def is_leap_year(year):
         return False
 
 
-# def days_in_a_month(month, year):
-#     months_31_days = [0, 2, 4, 6, 7, 9, 11]
-#     months_30_days = [3, 5, 8, 10]
-#     names_of_months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-#     my_return = []
 
-#     # if not months_30_days and not months_31_days:
-#     #      return (False, 'Invalid month. Enter a digit between 1-12')
+def day_of_week(year, month, day):
+    t = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4]
+    year -= month < 3
 
-
-#     if month-1 in months_31_days:
-#         my_return.append('31')
-#         my_return.append(names_of_months[month-1])
-#         # print(my_return)
-#         return my_return
-            
-#     elif month-1 in months_30_days:
-#         my_return.append('30')
-#         my_return.append(names_of_months[month-1])
-#         print(my_return)
-#         return my_return
-#     else:
-#         if is_leap_year(year):
-#             my_return.append(names_of_months[month-1])
-#             print('29')
-#             return '29'
-#         print('28')
-#         return '28'
-    
-
-
-
-# def month_formatter(month, year):
-
-#     my_return = days_in_a_month(month, year)
-#     print(my_return)
-
-#     if my_return == '28':
-#         print(my_return[0])
-
-#     if my_return == '29':
-#         print(my_return[0])
-    
-#     if my_return[0] == '30':
-#         print(my_return[0])
-
-#     if my_return[0] == '31':
-#         print(my_return[0])
-
-
-
+    # print((year + int(year/4) - int(year/100) + int(year/400) + t[month-1] + day) % 7)
+    return (year + int(year/4) - int(year/100) + int(year/400) + t[month-1] + day) % 7
      
-    
-
-   
-
-
-
 
 
 def days_in_a_month(month, year):
@@ -117,21 +67,21 @@ def days_in_a_month(month, year):
     if month-1 in months_31_days:
         my_return.append(31)
         my_return.append(names_of_months[month-1])
-        print(my_return)
+        # print(my_return)
         return my_return
             
     elif month-1 in months_30_days:
         my_return.append(30)
         my_return.append(names_of_months[month-1])
-        print(my_return)
+        # print(my_return)
         return my_return
     else:
         if is_leap_year(year):
             my_return.append(29)
             my_return.append(names_of_months[month-1])
-            print('29')
+            # print('29')
             return my_return
-        print('28')
+        # print('28')
         my_return.append(28)
         my_return.append(names_of_months[month-1])
         return my_return
@@ -140,27 +90,26 @@ def days_in_a_month(month, year):
 
 
 def month_formatter(month, year):
+    my_return_month = days_in_a_month(month, year)
+    my_return_day = day_of_week(year, month, 1)
+    print(my_return_day)
+    print(my_return_month[0])
 
-    my_return = days_in_a_month(month, year)
-    print(my_return)
-
-    if my_return[0] == 28:
-        print(my_return[0])
-
-    if my_return[0] == 29:
-        print(my_return[0])
-    
-    if my_return[0] == 30:
-        print(my_return[0])
-
-    if my_return[0] == 31:
-        print(my_return[0])
-
-
+    count = 0
+    for i in range(1 - my_return_day, my_return_month[0] + 1):
+        count += 1
+        
+        if i >= 1:
+            print(f'{i:>2}  ', end='')
+        if i < 1:
+            print(f'{" "*4}', end='')
+        if count % 7 == 0:
+            print('\n')
 
 
-days_in_a_month(2, 2013)
-month_formatter(2, 2013)
+
+days_in_a_month(5, 2012)
+month_formatter(5, 2012)
 
 
 
