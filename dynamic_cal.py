@@ -60,9 +60,6 @@ def days_in_a_month(month, year):
     names_of_months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     my_return = []
 
-    # if not months_30_days and not months_31_days:
-    #      return (False, 'Invalid month. Enter a digit between 1-12')
-
 
     if month-1 in months_31_days:
         my_return.append(31)
@@ -92,8 +89,13 @@ def days_in_a_month(month, year):
 def month_formatter(month, year):
     my_return_month = days_in_a_month(month, year)
     my_return_day = day_of_week(year, month, 1)
-    print(my_return_day)
-    print(my_return_month[0])
+    days_in_week = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+
+    print(f'{my_return_month[1]:^28}\n')
+
+    for i in days_in_week:
+        print(f'{i:>2}  ', end='')
+    print('\n')
 
     count = 0
     for i in range(1 - my_return_day, my_return_month[0] + 1):
