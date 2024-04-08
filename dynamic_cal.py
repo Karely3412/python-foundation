@@ -34,7 +34,6 @@ Formatting
 """
 
 
-
 def is_leap_year(year):
     if ( year % 4 == 0 and year % 100 != 0 ) or ( year % 400 == 0 ):
         print('True')
@@ -108,29 +107,12 @@ def month_formatter(month, year):
         if count % 7 == 0:
             print('\n')
 
+month_question = int(input('Enter a month from (1-12): '))
+year_question = int(input('Enter a year after 1970: '))
 
 
-days_in_a_month(5, 2012)
-month_formatter(5, 2012)
-
-
-
-
-
-
+month_formatter(month_question, year_question)
     
-
-
-# while True:
-#     month_question = input('Enter a month from (1-12): ')
-#     year_question = input('Enter a year after 1970: ')
-#     if 
-#     if !is_leap_year || it's !30 days:
-#         print(31 day calendar)
-#     if !leap year or it's !31 days:
-#         print(30 day calendar)
-#     else:
-#         print(leap calendar)
 
 
 
