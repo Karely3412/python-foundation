@@ -48,56 +48,46 @@ def day_of_week(year, month, day):
     t = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4]
     year -= month < 3
 
-    # print((year + int(year/4) - int(year/100) + int(year/400) + t[month-1] + day) % 7)
+    print((year + int(year/4) - int(year/100) + int(year/400) + t[month-1] + day) % 7)
     return (year + int(year/4) - int(year/100) + int(year/400) + t[month-1] + day) % 7
      
+
+def get_name_of_month(month_num):
+    names_of_months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+    return names_of_months[month_num - 1]
 
 
 def days_in_a_month(month, year):
     months_31_days = [0, 2, 4, 6, 7, 9, 11]
     months_30_days = [3, 5, 8, 10]
-    names_of_months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    my_return = []
 
 
     if month-1 in months_31_days:
-        my_return.append(31)
-        my_return.append(names_of_months[month-1])
-        # print(my_return)
-        return my_return
+        return 31
             
     elif month-1 in months_30_days:
-        my_return.append(30)
-        my_return.append(names_of_months[month-1])
-        # print(my_return)
-        return my_return
+        return 30
     else:
         if is_leap_year(year):
-            my_return.append(29)
-            my_return.append(names_of_months[month-1])
-            # print('29')
-            return my_return
-        # print('28')
-        my_return.append(28)
-        my_return.append(names_of_months[month-1])
-        return my_return
+            return 29
+        return 28
     
-
-
 
 def month_formatter(month, year):
     my_return_month = days_in_a_month(month, year)
+    month_name_return = get_name_of_month(month)
     my_return_day = day_of_week(year, month, 1)
     days_in_week = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 
-    print(f'{my_return_month[1]:>14} {year}\n')
+    print(f'{month_name_return +" "+str(year):^28}\n')
 
     for i in days_in_week:
         print(f'{i:>2}  ', end='')
     print('\n')
 
     count = 0
-    for i in range(1 - my_return_day, my_return_month[0] + 1):
+    for i in range(1 - my_return_day, my_return_month + 1):
         count += 1
         
         if i >= 1:
@@ -105,7 +95,10 @@ def month_formatter(month, year):
         if i < 1:
             print(f'{" "*4}', end='')
         if count % 7 == 0:
+            # print(count)
             print('\n')
+
+    print()
 
 month_question = int(input('Enter a month from (1-12): '))
 year_question = int(input('Enter a year after 1970: '))

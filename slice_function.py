@@ -22,20 +22,14 @@ def slice(iter_obj, start, stop):
     # print(start)
     iter_obj_start = iter_obj[start]-1
 
-    for i in iter_obj:
-        if i >= start and i <= stop:
-            print(i)
+    for i in range(len(iter_obj)):
+        if i-1 >= start and i <= stop:
+            sliced_list.append(i)
+    print(sliced_list)
 
-        
-
-        
-
-        
         
             
             
-
-        
 
 
 
@@ -44,7 +38,8 @@ def slice(iter_obj, start, stop):
     # return iter_obj
 
 
-slice(nums, 5, 8)
+slice(nums, 4, 8)
+print( nums[4: 8: 1] )
 
 
 
@@ -52,7 +47,6 @@ slice(nums, 5, 8)
 # print(slice(my_list))
 
 
-# print( nums[1:-2:-1] )
 # print( slice(nums, 1, -2, -1) )
 
 
