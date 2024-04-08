@@ -91,7 +91,7 @@ def month_formatter(month, year):
     my_return_day = day_of_week(year, month, 1)
     days_in_week = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 
-    print(f'{my_return_month[1]:^28}\n')
+    print(f'{my_return_month[1]:>14} {year}\n')
 
     for i in days_in_week:
         print(f'{i:>2}  ', end='')
