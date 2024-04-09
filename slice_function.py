@@ -1,46 +1,77 @@
 """
 
 1. iter_obj: The iterable object that will be split. (Required)
-2. start: The start index. Negative numbers are valid. Default=1
+2. start & stop: The start index. Negative numbers are valid. Default=1
     - For Loop 
-    - Start parameter
     - Conditional
+        - Start & stop parameter with Arithmetic Operators
 
 3. stop: The stop index. Remember that the slice will end before the stop index. Default = None
 4. step: The step direction and magnitude as a positive or negative integer. Default=1
+START & STOP:
+    - if we have -start then start need to start at end of list
+
+STEP:
+
 
 """
 
-
-
+#       0  1  2  3  4  5  6  7  8 
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+#      -9 -8 -7 -6 -5 -4 -3 -2 -1
 
 
-def slice(iter_obj, start, stop):
-    # print(iter_obj)
+#       0  1  2  3  4
+# nums = [1, 2, 3, 4, 5]
+#      -5 -4 -3 -2 -1
+
+
+def slice(iter_obj, start, stop, step):
     sliced_list = []
-    # print(start)
-    iter_obj_start = iter_obj[start]-1
+    stepped_list = []
 
-    for i in range(len(iter_obj)):
-        if i-1 >= start and i <= stop:
-            sliced_list.append(i)
-    print(sliced_list)
+    if start < 0:
+       start += len(nums)
 
+    if stop < 0:
+       stop += len(nums)
+
+    if start > stop and step < 0:
+        temp = start + 1
+        start = stop + 1
+        stop = temp
+
+    if (start < stop and stop < 0) and not (start==0 and stop==len(iter_obj)):
+        return []
+
+
+    for idx, val in enumerate(iter_obj):
+        if idx >= start and idx < stop:
+            sliced_list.append(val)
+    
+
+    if step < 0:
+        sliced_list.reverse()
+
+
+    for idx, val in enumerate(sliced_list):
+        if idx % step == 0:
+            stepped_list.append(val)
         
-            
-            
+
+    return stepped_list
 
 
+print(slice(nums, -1, 4, -1))
+print(       nums[-1: 4: -1] )
 
-
-
-    # return iter_obj
-
-
-slice(nums, 4, 8)
-print( nums[4: 8: 1] )
-
+print('+++')
+print('-++')
+print('+-+')
+print('++-')
+print('---')
+#2 that do work 
+#2 that dosen't
 
 
 
