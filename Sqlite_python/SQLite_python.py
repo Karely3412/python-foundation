@@ -2,9 +2,12 @@
 How may functions are needed?
     - Get all func
         - Query 
-        - Formatt
+        - Formatt (parse)
         - print
     - Add customer
+        - Insert into database
+        - Formatt (parse)
+        - print
     - Update customer info
     - Search for one 
     - Delete by cust id
@@ -38,18 +41,34 @@ def customer_menu():
         print(i)
 
 
-def get_all_customers():
-    space = ' '
+def input_entered():
+    print('Enter a Customer ID to View a Customer: ')
+    main_menu = input('(Press "Enter" to return to Main Menu) \n')
+    print(main_menu)
 
+    if main_menu == 'Enter':
+        customer_menu()
+        
+
+
+def get_all_customers(input):
+    space = ' '
     customer_data = cursor.execute('SELECT * FROM Customers').fetchall()
-    # print(customer_data)
+
     print('\n--- Customers ---')
     print(f'ID Name{space*23}City{space*15}State{space*6}Phone{space*6}Email\n')
 
-    columns = ['customer_id', 'name', ' city', 'state', 'phone', 'email']
+    # columns = ['customer_id', 'name', ' city', 'state', 'phone', 'email']
 
     for row in customer_data:
        print(f'{row[0]:<4}{row[1]:<26}{row[3]:<19}{row[4]:<11}{row[5]:<12}{row[6]}\n')
+
+    inputs_entered()
+
+
+
+def add_customer():
+    customer_add = cursor.execute('INSERT INTO Customers (name, street_address, city, state, postal_code, phone, email) VALUES (?,?,?,?,?,?,?)')
 
 
 
@@ -57,7 +76,7 @@ def get_all_customers():
 
 
 # customer_menu()
-get_all_customers()
+get_all_customers(input)
 
 
 
