@@ -22,9 +22,10 @@ How may functions are needed?
 
 import sqlite3
 
-conn =  sqlite3.connect('dp_customers.db')
+conn =  sqlite3.connect('Sqlite_python/dp_customers.db')
 
 cursor = conn.cursor()
+
 
 def customer_menu():
     print('\n**** Customer Database ****\n')
@@ -34,14 +35,18 @@ def customer_menu():
         print(i)
 
 
-def 
+def get_all_customers():
+
+    rows = cursor.execute('SELECT * FROM Customers').fetchall()
+
+    print(rows)
 
 
 
 
 
-
-customer_menu()
+# customer_menu()
+get_all_customers()
 
 
 
