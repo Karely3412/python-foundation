@@ -1,6 +1,9 @@
 """
 How may functions are needed?
     - Get all func
+        - Query 
+        - Formatt
+        - print
     - Add customer
     - Update customer info
     - Search for one 
@@ -36,10 +39,18 @@ def customer_menu():
 
 
 def get_all_customers():
+    space = ' '
 
-    rows = cursor.execute('SELECT * FROM Customers').fetchall()
+    customer_data = cursor.execute('SELECT * FROM Customers').fetchall()
+    # print(customer_data)
+    print('\n--- Customers ---')
+    print(f'ID Name{space*23}City{space*15}State{space*6}Phone{space*6}Email\n')
 
-    print(rows)
+    columns = ['customer_id', 'name', ' city', 'state', 'phone', 'email']
+
+    for row in customer_data:
+       print(f'{row[0]:<4}{row[1]:<26}{row[3]:<19}{row[4]:<11}{row[5]:<12}{row[6]}\n')
+
 
 
 
