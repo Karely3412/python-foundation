@@ -41,6 +41,8 @@ def slice(iter_obj, start, stop, step):
         start = stop + 1
         stop = temp
 
+    # 6 - 2 -2
+
     if (start < stop and stop < 0) and not (start==0 and stop==len(iter_obj)):
         return []
 
@@ -65,13 +67,14 @@ def slice(iter_obj, start, stop, step):
 print(slice(nums, -1, 4, -1))
 print(       nums[-1: 4: -1] )
 
-print('+++')
-print('-++')
-print('+-+')
-print('++-')
-print('---')
-#2 that do work 
-#2 that dosen't
+# print('+++')
+# print('-++')
+# print('+-+')
+# print('++-')
+# print('---')
+
+# print(slice(nums, -1, -4, -1))
+# print(       nums[-1: -4: -1] )
 
 
 
