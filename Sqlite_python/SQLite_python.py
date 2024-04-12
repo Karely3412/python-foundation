@@ -33,26 +33,25 @@ conn =  sqlite3.connect('Sqlite_python/dp_customers.db')
 cursor = conn.cursor()
 
 
-def customer_menu():
-    print('\n**** Customer Database ****\n')
-    menu_options = ["[1] View All Customers", "[2] Search Customers", "[3] Add a New Customer", "[Q] Quit\n"]
+# def customer_menu():
+#     print('\n**** Customer Database ****\n')
+#     menu_options = ["[1] View All Customers", "[2] Search Customers", "[3] Add a New Customer", "[Q] Quit\n"]
 
-    for i in menu_options:
-        print(i)
-
-
-def input_entered():
-    print('Enter a Customer ID to View a Customer: ')
-    main_menu = input('(Press "Enter" to return to Main Menu) \n')
-    print(main_menu)
-
-    if main_menu == 'Enter':
-        customer_menu()
-        
+#     for i in menu_options:
+#         print(i)
 
 
-def get_all_customers(input):
+# def input_entered():
+#     main_menu = input('(Press "Enter" to return to Main Menu) \n')
+#     print(main_menu)
+
+#     if main_menu == 'Enter':
+#         customer_menu()
+
+
+def get_all_customers(user_input):
     space = ' '
+    customer_data_list = []
     customer_data = cursor.execute('SELECT * FROM Customers').fetchall()
 
     print('\n--- Customers ---')
@@ -60,10 +59,24 @@ def get_all_customers(input):
 
     # columns = ['customer_id', 'name', ' city', 'state', 'phone', 'email']
 
-    for row in customer_data:
-       print(f'{row[0]:<4}{row[1]:<26}{row[3]:<19}{row[4]:<11}{row[5]:<12}{row[6]}\n')
 
-    inputs_entered()
+    for row in customer_data:
+        print(f'{row[0]:<3}{row[1]:<26}{row[3]:<19}{row[4]:<11}{row[6]:<12}{row[7]}\n')
+        # view_cust = 'Enter a Customer ID to View a Customer: '
+        
+        for idx, val in enumerate(row):
+            if user_input == idx:
+                print(val, end='')
+
+
+    # input_entered()
+
+
+def search_customer():
+    customer_data = cursor.execute("SELECT customer_id FROM Customers ").fetchone()
+
+    
+
 
 
 
@@ -76,7 +89,7 @@ def add_customer():
 
 
 # customer_menu()
-get_all_customers(input)
+get_all_customers(5)
 
 
 
