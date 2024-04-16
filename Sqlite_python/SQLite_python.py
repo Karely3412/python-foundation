@@ -1,5 +1,5 @@
 """
-How may functions are needed?
+How may functions are needed? REMEMBER THAT FUNCTIONS SHOULD ONLY DO ONE THING.
     - Get all func
         - Query 
         - Formatt (parse)
@@ -22,8 +22,6 @@ How may functions are needed?
 6. Delete a Customer using their customer_id
 7. Quit
 
-
-
 """
 
 import sqlite3
@@ -33,17 +31,17 @@ conn =  sqlite3.connect('Sqlite_python/dp_customers.db')
 cursor = conn.cursor()
 
 
-# def customer_menu():
-#     print('\n**** Customer Database ****\n')
-#     menu_options = ["[1] View All Customers", "[2] Search Customers", "[3] Add a New Customer", "[Q] Quit\n"]
+def customer_menu():
+    print('\n**** Customer Database ****\n')
+    menu_options = ["[1] View All Customers", "[2] Search Customers", "[3] Add a New Customer", "[Q] Quit\n"]
 
-#     for i in menu_options:
-#         print(i)
+    for i in menu_options:
+        print(i)
 
 
-# def input_entered():
-#     main_menu = input('(Press "Enter" to return to Main Menu) \n')
-#     print(main_menu)
+def menu_selection():
+    main_menu = input('(Press "Enter" to return to Main Menu) \n')
+    print(main_menu)
 
 #     if main_menu == 'Enter':
 #         customer_menu()
@@ -51,7 +49,6 @@ cursor = conn.cursor()
 
 def get_all_customers(user_input):
     space = ' '
-    customer_data_list = []
     customer_data = cursor.execute('SELECT * FROM Customers').fetchall()
 
     print('\n--- Customers ---')
@@ -62,20 +59,11 @@ def get_all_customers(user_input):
 
     for row in customer_data:
         print(f'{row[0]:<3}{row[1]:<26}{row[3]:<19}{row[4]:<11}{row[6]:<12}{row[7]}\n')
-        # view_cust = 'Enter a Customer ID to View a Customer: '
-        
-        for idx, val in enumerate(row):
-            if user_input == idx:
-                print(val, end='')
 
-
-    # input_entered()
 
 
 def search_customer():
     customer_data = cursor.execute("SELECT customer_id FROM Customers ").fetchone()
-
-    
 
 
 
@@ -89,7 +77,7 @@ def add_customer():
 
 
 # customer_menu()
-get_all_customers(5)
+get_all_customers(1)
 
 
 
