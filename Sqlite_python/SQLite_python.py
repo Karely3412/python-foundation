@@ -54,17 +54,15 @@ def get_all_customers(user_input):
     print('\n--- Customers ---')
     print(f'ID Name{space*23}City{space*15}State{space*6}Phone{space*6}Email\n')
 
-    # columns = ['customer_id', 'name', ' city', 'state', 'phone', 'email']
-
 
     for row in customer_data:
         print(f'{row[0]:<3}{row[1]:<26}{row[3]:<19}{row[4]:<11}{row[6]:<12}{row[7]}\n')
 
 
 
-def search_customer():
-    customer_data = cursor.execute("SELECT customer_id FROM Customers ").fetchone()
-
+def search_customer(customer_id):
+    customer_data = cursor.execute("SELECT name,street_address,city,state,phone,email FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
+    return customer_data
 
 
 
@@ -73,11 +71,9 @@ def add_customer():
 
 
 
-
-
-
 # customer_menu()
-get_all_customers(1)
+# get_all_customers(1)
+print(search_customer(5))
 
 
 
