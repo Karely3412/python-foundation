@@ -67,6 +67,8 @@ def search_customer(customer_id):
 
 
 def add_customer():
+    print('### New Customer ###')
+    print('Please fill out the form below to add a new Customer:')
     customer_name = input('Customers name: ')
     customer_address = input('Customers address: ')
     customer_city = input('Customers city: ')
@@ -76,6 +78,8 @@ def add_customer():
     email = input('Customers email: ')
 
     cursor.execute('INSERT INTO Customers (name, street_address, city, state, postal_code, phone, email) VALUES (?,?,?,?,?,?,?)',(customer_name, customer_address, customer_city, customer_state, customer_postal_code, phone, email))
+
+    print(f'SUCCESS: Customer "{customer_name}" Successfully added!')
 
     conn.commit()
 
@@ -105,8 +109,8 @@ def delete_customer():
 # customer_menu()
 # get_all_customers(1)
 # print(search_customer(5))
-# add_customer()
-delete_customer()
+add_customer()
+# delete_customer()
 
 
 
