@@ -67,13 +67,46 @@ def search_customer(customer_id):
 
 
 def add_customer():
-    customer_add = cursor.execute('INSERT INTO Customers (name, street_address, city, state, postal_code, phone, email) VALUES (?,?,?,?,?,?,?)')
+    customer_name = input('Customers name: ')
+    customer_address = input('Customers address: ')
+    customer_city = input('Customers city: ')
+    customer_state = input('Customers state: ')
+    customer_postal_code = input('Customers postal code: ')
+    phone = input('Customers phone: ')
+    email = input('Customers email: ')
+
+    cursor.execute('INSERT INTO Customers (name, street_address, city, state, postal_code, phone, email) VALUES (?,?,?,?,?,?,?)',(customer_name, customer_address, customer_city, customer_state, customer_postal_code, phone, email))
+
+    conn.commit()
+
+
+def delete_customer():
+    print('Enter Customer ID: ')
+    customer_id = input()
+    customer_data = cursor.execute("SELECT customer_id, name FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
+    # print(customer_data[1])
+
+    print(f'Are SURE you want to DELETE {customer_data[0]}:"{customer_data[1]}" (y/n)?')
+    customer_answer = input()
+
+    if customer_answer == 'y':
+        print(f'"SUCCESS: Customer {customer_data[1]} succesfully Deleted!"')
+
+        cursor.execute('DELETE FROM Customers WHERE customer_id = ?', (customer_id,)).fetchone()
+
+    conn.commit()
+
+
+    
+
 
 
 
 # customer_menu()
 # get_all_customers(1)
-print(search_customer(5))
+# print(search_customer(5))
+# add_customer()
+delete_customer()
 
 
 
