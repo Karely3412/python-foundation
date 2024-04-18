@@ -46,8 +46,13 @@ def menu_selection():
 #     if main_menu == 'Enter':
 #         customer_menu()
 
+def customer_detail(customer_data):
 
-def get_all_customers(user_input):
+    print("\n+++ Customer Detail +++")
+    print(f'{"ID:":<10}{customer_data[0]}\n{"Name:":<10}{customer_data[1]}\n{"Address:":<10}{customer_data[2]}\n{"City:":<10}{customer_data[3]}\n{"State:":<10}{customer_data[4]}\n{"Zipcode:":<10}{customer_data[5]}\n{"Phone:":<10}{customer_data[6]}\n{"Email:":<10}{customer_data[7]}\n')
+
+
+def get_all_customers():
     space = ' '
     customer_data = cursor.execute('SELECT * FROM Customers').fetchall()
 
@@ -57,12 +62,26 @@ def get_all_customers(user_input):
 
     for row in customer_data:
         print(f'{row[0]:<3}{row[1]:<26}{row[3]:<19}{row[4]:<11}{row[6]:<12}{row[7]}\n')
+    
+
+    print("\nEnter a Customer ID to View a Customer:")
+    print("Press 'Enter' to return to Main Menu")
+    customer_answer = input()
+    
+    if customer_answer == 'Enter':
+        menu_selection()
+    else:
+        search_customer(customer_answer)
+
 
 
 
 def search_customer(customer_id):
-    customer_data = cursor.execute("SELECT name,street_address,city,state,phone,email FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
-    return customer_data
+    customer_data = cursor.execute("SELECT customer_id, name, street_address, city, state, postal_code, phone, email FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
+    # print(customer_data)
+
+    customer_detail(customer_data)
+
 
 
 
@@ -90,7 +109,7 @@ def delete_customer():
     customer_data = cursor.execute("SELECT customer_id, name FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
     # print(customer_data[1])
 
-    print(f'Are SURE you want to DELETE {customer_data[0]}:"{customer_data[1]}" (y/n)?')
+    print(f'Are you SURE you want to DELETE {customer_data[0]}:"{customer_data[1]}" (y/n)?')
     customer_answer = input()
 
     if customer_answer == 'y':
@@ -107,9 +126,9 @@ def delete_customer():
 
 
 # customer_menu()
-# get_all_customers(1)
-# print(search_customer(5))
-add_customer()
+get_all_customers()
+# search_customer(5)
+# add_customer()
 # delete_customer()
 
 
