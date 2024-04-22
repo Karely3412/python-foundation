@@ -39,13 +39,6 @@ def customer_menu():
         print(i)
 
 
-def menu_selection():
-    main_menu = input('(Press "Enter" to return to Main Menu) \n')
-    print(main_menu)
-
-#     if main_menu == 'Enter':
-#         customer_menu()
-
 def customer_detail(customer_data):
 
     print("\n+++ Customer Detail +++")
@@ -64,24 +57,29 @@ def get_all_customers():
         print(f'{row[0]:<3}{row[1]:<26}{row[3]:<19}{row[4]:<11}{row[6]:<12}{row[7]}\n')
     
 
-    print("\nEnter a Customer ID to View a Customer:")
-    print("Press 'Enter' to return to Main Menu")
-    customer_answer = input()
+    # print("\nEnter a Customer ID to View a Customer:")
+    # print("Press 'Enter' to return to Main Menu")
+    # customer_answer = input()
     
-    if customer_answer == 'Enter':
-        menu_selection()
-    else:
-        search_customer(customer_answer)
-
+    # if customer_answer == 'enter' and customer_answer == '':
+    #     customer_menu()
+    # else:
+    #     searched_cust = search_customer(customer_answer)
+    #     customer_detail(searched_cust)
 
 
 
 def search_customer(customer_id):
+    # cursor.execute("SELECT customer_id, name, street_address, city, state, postal_code, phone, email FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
     customer_data = cursor.execute("SELECT customer_id, name, street_address, city, state, postal_code, phone, email FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
     # print(customer_data)
 
-    customer_detail(customer_data)
+    if customer_id == None:
+        print("User not found.")
+    else:
+        return customer_data
 
+    # customer_detail(customer_data)
 
 
 
@@ -103,9 +101,65 @@ def add_customer():
     conn.commit()
 
 
-def delete_customer():
-    print('Enter Customer ID: ')
-    customer_id = input()
+
+def update_customer(customer_id, user_input):
+    id_search_results = search_customer(customer_id)
+
+    if user_input == "n":
+        print('Enter new customer name:')
+        name_field =input()
+        name_update = 'UPDATE Customers SET name=? WHERE customer_id=?'
+
+        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+        
+    if user_input == "a":
+        print('Enter new customer address:')
+        name_field =input()
+        name_update = 'UPDATE Customers SET street_address=? WHERE customer_id=?'
+
+        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+
+    if user_input == "c":
+        print('Enter new customer city:')
+        name_field =input()
+        name_update = 'UPDATE Customers SET city=? WHERE customer_id=?'
+
+        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+
+    if user_input == "s":
+        print('Enter new customer state:')
+        name_field =input()
+        name_update = 'UPDATE Customers SET state=? WHERE customer_id=?'
+
+        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+
+    if user_input == "z":
+        print('Enter new customer postal_code:')
+        name_field =input()
+        name_update = 'UPDATE Customers SET postal_code=? WHERE customer_id=?'
+
+        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+
+    if user_input == "p":
+        print('Enter new customer phone:')
+        name_field =input()
+        name_update = 'UPDATE Customers SET phone=? WHERE customer_id=?'
+
+        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+
+    if user_input == "e":
+        print('Enter new customer email:')
+        name_field =input()
+        name_update = 'UPDATE Customers SET email=? WHERE customer_id=?'
+
+        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+
+
+    conn.commit()
+
+
+def delete_customer(customer_id):
+    
     customer_data = cursor.execute("SELECT customer_id, name FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
     # print(customer_data[1])
 
@@ -113,23 +167,59 @@ def delete_customer():
     customer_answer = input()
 
     if customer_answer == 'y':
-        print(f'"SUCCESS: Customer {customer_data[1]} succesfully Deleted!"')
+        print(f'\n"SUCCESS: Customer {customer_data[1]} succesfully Deleted!"')
 
         cursor.execute('DELETE FROM Customers WHERE customer_id = ?', (customer_id,)).fetchone()
+
 
     conn.commit()
 
 
     
+while True:
+
+    customer_menu()
+    user_input = input()
+
+    if user_input == "1":
+        get_all_customers()
+        while True:
+            print("\nEnter a Customer ID to View a Customer:")
+            print("Press 'Enter' to return to Main Menu")
+            customer_answer = input()
+            if customer_answer == '':
+                break
+            else:
+                results = search_customer(customer_answer)
+                customer_detail(results)
+
+                print("To update a field, enter the first letter of the field.")
+                print("To delete this record, type 'DELETE'.")
+                print("To return to the main menu, press 'Enter'.")
+                user_input = input(">>> ")
+
+                if user_input == 'delete':
+                    delete_customer(results[0])
+                    break
+                if customer_answer == '':
+                    break
+                else:
+                    # print('To update a field, enter the first letter of the field.\n')
+                    update_customer(results[0], user_input)
+                    break
+
+    if user_input == '2':
+        while True:
+            print("\nEnter a Customer ID to View a Customer:")
+            print("Press 'Enter' to return to Main Menu")
+            customer_answer = input()
+            if customer_answer == '':
+                break
+            results = search_customer(customer_answer)
+            customer_detail(results)
 
 
-
-
-# customer_menu()
-get_all_customers()
-# search_customer(5)
-# add_customer()
-# delete_customer()
+    
 
 
 
