@@ -106,53 +106,70 @@ def update_customer(customer_id, user_input):
     id_search_results = search_customer(customer_id)
 
     if user_input == "n":
+        print(f"\nCurrent Customer Name: {id_search_results[1]}\n")
         print('Enter new customer name:')
         name_field =input()
         name_update = 'UPDATE Customers SET name=? WHERE customer_id=?'
 
         cursor.execute(name_update, (name_field, str(id_search_results[0])))
+        print(f"\nNew Customer Name: {name_field}")
+
+
         
     if user_input == "a":
-        print('Enter new customer address:')
-        name_field =input()
-        name_update = 'UPDATE Customers SET street_address=? WHERE customer_id=?'
+        print(f"\nCurrent Customer Address: {id_search_results[2]}\n")
+        print('Enter New Customer Address:')
+        address_field =input()
+        address_update = 'UPDATE Customers SET street_address=? WHERE customer_id=?'
 
-        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+        cursor.execute(address_update, (address_field, str(id_search_results[0])))
+        print(f"\nNew Customer Address: {address_field}")
 
     if user_input == "c":
-        print('Enter new customer city:')
-        name_field =input()
-        name_update = 'UPDATE Customers SET city=? WHERE customer_id=?'
+        print(f"\nCurrent Customer City: {id_search_results[3]}\n")
+        print('Enter New Customer City:')
+        city_field =input()
+        city_update = 'UPDATE Customers SET city=? WHERE customer_id=?'
 
-        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+        cursor.execute(city_update, (city_field, str(id_search_results[0])))
+        print(f"\nNew Customer City: {city_field}")
 
     if user_input == "s":
-        print('Enter new customer state:')
-        name_field =input()
-        name_update = 'UPDATE Customers SET state=? WHERE customer_id=?'
+        print(f"\nCurrent Customer State: {id_search_results[4]}\n")
+        print('Enter New Customer State:')
+        state_field =input()
+        state_update = 'UPDATE Customers SET state=? WHERE customer_id=?'
 
-        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+        cursor.execute(state_update, (state_field, str(id_search_results[0])))
+        print(f"\nNew Customer State: {state_field}")
+
 
     if user_input == "z":
-        print('Enter new customer postal_code:')
-        name_field =input()
-        name_update = 'UPDATE Customers SET postal_code=? WHERE customer_id=?'
+        print(f"\nCurrent Customer Zipcode: {id_search_results[5]}\n")
+        print('Enter New Customer Zipcode:')
+        zipcode_field =input()
+        zipcode_update = 'UPDATE Customers SET postal_code=? WHERE customer_id=?'
 
-        cursor.execute(name_update, (name_field, str(id_search_results[0])))
-
+        cursor.execute(zipcode_update, (zipcode_field, str(id_search_results[0])))
+        print(f"\nNew Customer State: {zipcode_field}")
+    
     if user_input == "p":
-        print('Enter new customer phone:')
-        name_field =input()
-        name_update = 'UPDATE Customers SET phone=? WHERE customer_id=?'
+        print(f"\nCurrent Customer Phone: {id_search_results[6]}\n")
+        print('Enter New Customer Phone:')
+        phone_field =input()
+        phone_update = 'UPDATE Customers SET phone=? WHERE customer_id=?'
 
-        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+        cursor.execute(phone_update, (phone_field, str(id_search_results[0])))
+        print(f"\nNew Customer State: {phone_field}")
 
     if user_input == "e":
-        print('Enter new customer email:')
-        name_field =input()
-        name_update = 'UPDATE Customers SET email=? WHERE customer_id=?'
+        print(f"\nCurrent Customer Email: {id_search_results[7]}\n")
+        print('Enter New Customer Email:')
+        email_field =input()
+        email_update = 'UPDATE Customers SET email=? WHERE customer_id=?'
 
-        cursor.execute(name_update, (name_field, str(id_search_results[0])))
+        cursor.execute(email_update, (email_field, str(id_search_results[0])))
+        print(f"\nNew Customer State: {email_field}")
 
 
     conn.commit()
@@ -204,7 +221,6 @@ while True:
                 if customer_answer == '':
                     break
                 else:
-                    # print('To update a field, enter the first letter of the field.\n')
                     update_customer(results[0], user_input)
                     break
 
