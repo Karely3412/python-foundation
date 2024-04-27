@@ -45,42 +45,42 @@ def customer_detail(customer_data):
     print(f'{"ID:":<10}{customer_data[0]}\n{"Name:":<10}{customer_data[1]}\n{"Address:":<10}{customer_data[2]}\n{"City:":<10}{customer_data[3]}\n{"State:":<10}{customer_data[4]}\n{"Zipcode:":<10}{customer_data[5]}\n{"Phone:":<10}{customer_data[6]}\n{"Email:":<10}{customer_data[7]}\n')
 
 
-def get_all_customers():
+def customers(customer_data):
     space = ' '
-    customer_data = cursor.execute('SELECT * FROM Customers').fetchall()
-
     print('\n--- Customers ---')
     print(f'ID Name{space*23}City{space*15}State{space*6}Phone{space*6}Email\n')
 
 
     for row in customer_data:
         print(f'{row[0]:<3}{row[1]:<26}{row[3]:<19}{row[4]:<11}{row[6]:<12}{row[7]}\n')
-    
 
-    # print("\nEnter a Customer ID to View a Customer:")
-    # print("Press 'Enter' to return to Main Menu")
-    # customer_answer = input()
-    
-    # if customer_answer == 'enter' and customer_answer == '':
-    #     customer_menu()
-    # else:
-    #     searched_cust = search_customer(customer_answer)
-    #     customer_detail(searched_cust)
+
+def get_all_customers():
+    customer_data = cursor.execute('SELECT * FROM Customers').fetchall()
+
+    customers(customer_data)
 
 
 
-def search_customer(customer_id):
-    # cursor.execute("SELECT customer_id, name, street_address, city, state, postal_code, phone, email FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
-    customer_data = cursor.execute("SELECT customer_id, name, street_address, city, state, postal_code, phone, email FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
-    # print(customer_data)
+def search_customer(customer_info):
 
-    if customer_id == None:
-        print("User not found.")
-    else:
-        return customer_data
+    if customer_info == "customer id":
+        search_input = input("Enter customer id: ")
 
-    # customer_detail(customer_data)
+        customer_name = cursor.execute(f"SELECT * FROM Customers WHERE customer_id = ? ", (search_input,)).fetchone()
 
+        return customer_name
+
+    elif customer_info == 'name':
+        search_input = input("Enter name: ")
+        search_input = f"%{search_input}%"
+        customer_data = cursor.execute(f"SELECT * FROM Customers WHERE name LIKE ? ", (search_input,)).fetchall()
+
+        search_input_id = input("Enter customer id: ")
+        customer_name = cursor.execute(f"SELECT * FROM Customers WHERE customer_id = ? ", (search_input_id,)).fetchone()
+
+        returned_customers = customers(customer_data)
+        return returned_customers
 
 
 def add_customer():
@@ -99,7 +99,6 @@ def add_customer():
     print(f'SUCCESS: Customer "{customer_name}" Successfully added!')
 
     conn.commit()
-
 
 
 def update_customer(customer_id, user_input):
@@ -178,13 +177,12 @@ def update_customer(customer_id, user_input):
 def delete_customer(customer_id):
     
     customer_data = cursor.execute("SELECT customer_id, name FROM Customers WHERE customer_id = ?", (customer_id,)).fetchone()
-    # print(customer_data[1])
 
     print(f'Are you SURE you want to DELETE {customer_data[0]}:"{customer_data[1]}" (y/n)?')
     customer_answer = input()
 
     if customer_answer == 'y':
-        print(f'\n"SUCCESS: Customer {customer_data[1]} succesfully Deleted!"')
+        print(f'\n"SUCCESS: Customer {customer_data[1]} successfully Deleted!"')
 
         cursor.execute('DELETE FROM Customers WHERE customer_id = ?', (customer_id,)).fetchone()
 
@@ -225,14 +223,18 @@ while True:
                     break
 
     if user_input == '2':
+        search_by_input = input('Search by Name or Customer ID: \n')
+        
         while True:
+
+            if search_by_input == '':
+                break
+
+            results = search_customer('name')
+            print(results)
+
             print("\nEnter a Customer ID to View a Customer:")
             print("Press 'Enter' to return to Main Menu")
-            customer_answer = input()
-            if customer_answer == '':
-                break
-            results = search_customer(customer_answer)
-            customer_detail(results)
 
 
     
